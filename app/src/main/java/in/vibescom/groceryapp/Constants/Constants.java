@@ -51,7 +51,6 @@ public interface Constants {
     String kGenericAuthToken = "genericAuthToken";
     String kDefaultAuthToken = "defaultAuthToken";
     String kUserId = "userId";
-    String kJabberId = "jabberId";
 
     String kReferralCode = "referralCode";
     String kIsReferralCodeValidated = "isReferralCodeValidated";
