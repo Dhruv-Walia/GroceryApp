@@ -14,7 +14,6 @@ public class CurrentUser extends BaseModel implements Serializable,Constants {
 
     private String authToken;
     private Integer userId;
-    private String jabberId;
     private String firstName;
     private String lastName;
     private SocialLink email;
@@ -33,7 +32,6 @@ public class CurrentUser extends BaseModel implements Serializable,Constants {
 
     public CurrentUser(JSONObject jsonResponse) {
         this.userId = getValue(jsonResponse, kUserId, Integer.class);
-        this.jabberId = getValue(jsonResponse, kJabberId, String.class);
         this.authToken = getValue(jsonResponse, kAuthToken, String.class);
         this.firstName = getValue(jsonResponse, kFirstName, String.class);
         this.lastName = getValue(jsonResponse, kLastName, String.class);
@@ -81,10 +79,6 @@ public class CurrentUser extends BaseModel implements Serializable,Constants {
         return userId;
     }
 
-    public String getJabberId() {
-        return jabberId;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -95,10 +89,6 @@ public class CurrentUser extends BaseModel implements Serializable,Constants {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public void setJabberId(String jabberId) {
-        this.jabberId = jabberId;
     }
 
     public void setFirstName(String firstName) {
