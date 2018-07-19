@@ -3,5 +3,170 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="theme_color">#3F51B5</color>
+
+    <color name="theme_color">#D1404B</color>
+    <color name="theme_color_faded">#40D1404B</color>
+    <color name="window_background">#FFFFFF</color>
+    <color name="tab_request_color">#30C430</color>
+    <color name="tab_invitation_color">#00B7DA</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="location_color">#4DD6E3</color>
+    <color name="toolbar_text_color">#D1404B</color>
+    <color name="translucent_color">#80000000</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+
+    <!--<color name="primary_color">#E76A6A</color>-->
+    <color name="action_color">#CA3142</color>
+    <color name="blur_toolbar">#4DFFFFFF</color>
+
+    <color name="text_color_white">#FFFFFF</color>
+    <color name="text_color_regular">#4D4C52</color>
+    <color name="text_color_normal">#9E9E9E</color>
+    <color name="text_color_lite">#939393</color>
+    <color name="text_color_ultra_lite">#9E9EA0</color>
+    <color name="text_color_mega_lite">#309E9EA0</color>
+    <color name="background_color_order_received">#CCFFFF</color>
+    <color name="hint_color_regular">#839191</color>
+    <color name="colorTransparent">#000000</color>
+    <color name="darkTransparent">#CC000000</color>
+    <color name="order_backgroud">#D6D6D6</color>
+    <color name="link_color">#29b6f6</color>
+    <color name="divider_color">#309E9EA0</color>
+    <color name="navigation_active_tab">#D1404B</color>
+    <color name="navigation_inactive_tab">#9E9EA0</color>
+    <color name="colorSecondaryText">#7E7D82</color>
+    <color name="arrow_icon_color">#999A9A</color>
+    <color name="card_medium_text">#808080</color>
+    <color name="red_button_color">#E40016</color>
+    <color name="card_normal_text">#262626</color>
+    <color name="colorlineView">#cccccc</color>
+    <color name="color_instock">#6FC296</color>
+    <color name="color_out_of_stock">#F8636A</color>
+
+    <!--ShopFeeds-->
+    <color name="item_name_text_color">#4D4C52</color>
+    <color name="item_seller_text_color">#487EBE</color>
+    <color name="item_extra_text_color">#6A6A6A</color>
+
+    <!--Permissions-->
+    <color name="permission_text_color">#C07009</color>
+    <color name="grant_access_text_color">#CA3142</color>
+    <color name="permission_subtext_color">#929393</color>
+
+    <!--MyConnection-->
+
+    <color name="people_you_may_color">#36B79B</color>
+    <color name="gmail_color">#C60000</color>
+    <color name="facebook_color">#27487A</color>
+    <color name="phone_color">#9A9A9A</color>
+    <color name="more_color">#00AED4</color>
+    <color name="comment_box">#F4F3F4</color>
+
+    <color name="empty_title_text_color">#C17009</color>
+    <color name="empty_message_text_color">#9E9797</color>
+
+    <color name="search_text_color">#A5A5A5</color>
+    <color name="connection_name_text_color">#4D4C52</color>
+    <color name="connection_name_subtext_color">#7C7D82</color>
+    <color name="connection_location_text_color">#487EBE</color>
+
+    <color name="request_name_color">#4D4C52</color>
+    <color name="request_contact_color">#7E7D82</color>
+    <color name="request_subtext_color">#9E9EA0</color>
+
+
+    <!--Profile Module-->
+    <color name="stuff_color">#777878</color>
+    <color name="profile_pic_border">#309E9EA0</color>
+    <color name="selling_stuff_highlight_color">#0289B3</color>
+    <color name="favorite_highlight_color">#B30318</color>
+    <color name="name_color">#454848</color>
+    <color name="verified_color">#999A9A</color>
+    <color name="about_name_color">#454848</color>
+    <color name="main_text_color">#444848</color>
+    <color name="available_color">#0AC741</color>
+    <color name="profile_status">#004d31</color>
+
+
+    <!--selling stuff-->
+    <color name="stuff_price_text">#646456</color>
+    <color name="stuff_subtext">#6A6A6B</color>
+
+
+    <!--product details-->
+    <color name="product_name_text_color">#333333</color>
+
+
+    <!--Add New Skill Screen-->
+    <color name="actv_text_color">#A1A1A1</color>
+
+    <!--Row My address screen-->
+    <color name="row_address_color">#808081</color>
+
+    <color name="chat_text_message">#FFFFFF</color>
+
+    <color name="row_address_phone_no">#828283</color>
+
+
+    <!--Row Recent Search Layout Screen -->
+    <color name="recent_search_color">#646767</color>
+    <color name="recent_clear_color">#226BAC</color>
+    <color name="black_color">#000000</color>
+    <color name="orange_for_inventrory">#F26C20</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#30C430</color>
+
+    <!--Shop Fragment-->
+
+
+    <color name="activeState">#008D42</color>
+    <color name="inactiveState">#BABABA</color>
+
+    <!--cart-->
+    <color name="cartRemove">#EA7580</color>
+    <color name="cartContinue">#3984A6</color>
+    <color name="cartHeader">#E3E3E3</color>
+    <color name="verifyCode">#17648C</color>
+
+
+    <!--order summary-->
+    <color name="orderSummaryTextBack">#E4E4E4</color>
+    <color name="orderSummaryOrderBack">#F8F8F8</color>
+    <color name="orderSummaryButton">#3984A6</color>
+
+
+    <!--color for parent shop filter tab button-->
+    <color name="ButtonShopCategoryColor">#F8636A</color>
+
+    <!-- Side menu-->
+    <color name="dialogWelcomeToPeepsin">#DC1D40</color>
+    <color name="dialogVersionUpdateColor">#F4B504</color>
+
 </resources>

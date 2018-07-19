@@ -18,4 +18,9 @@
         <item name="android:windowBackground">@drawable/canvas_progressdialog</item>
     </style>
 
+    <style name="InputLayoutAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/hint_color_regular</item>
+    </style>
+
+
 </resources>
