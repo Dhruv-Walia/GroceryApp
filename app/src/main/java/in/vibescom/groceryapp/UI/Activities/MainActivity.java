@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import in.vibescom.groceryapp.R;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView create,forgot;

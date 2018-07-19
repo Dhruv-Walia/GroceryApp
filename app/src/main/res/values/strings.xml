@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">GroceryApp</string>
-    <string name="new_user">If not Registered!!!<b>SIGN IN</b></string>
+    <string name="COD">APP CONTENT INFO</string>
+
+    <string name="new_user">Don\'t have account? SignUp</string>
+    <string name="title_myprofile">Profile</string>
 </resources>
