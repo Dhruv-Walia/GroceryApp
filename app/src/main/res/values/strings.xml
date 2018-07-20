@@ -2,7 +2,7 @@
     <string name="app_name">GroceryApp</string>
     <string name="COD">APP CONTENT INFO</string>
 
-    <string name="new_user">Don\'t have account? SignUp</string>
+    <string name="new_user">Do not have account? SignUp</string>
     <string name="title_myprofile">Profile</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
