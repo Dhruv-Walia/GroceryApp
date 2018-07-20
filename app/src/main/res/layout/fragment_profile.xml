@@ -6,6 +6,7 @@
     android:background="@color/window_background"
     android:fitsSystemWindows="true"
     android:focusableInTouchMode="true"
+    android:theme="@style/AppTheme.NoAction"
     tools:context=".UI.Activities.ProfileActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -36,30 +37,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:baselineAligned="false"
-                android:orientation="horizontal"
+                android:gravity="center"
                 android:padding="@dimen/padding_5dp">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile_image"
+                    android:layout_width="@dimen/profile_size"
+                    android:layout_height="@dimen/profile_size"
                     android:layout_centerInParent="true"
-                    android:gravity="center">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/iv_profile_image"
-                        android:layout_width="@dimen/profile_size"
-                        android:layout_height="@dimen/profile_size"
-                        android:layout_centerInParent="true"
-                        android:padding="2dp"
-                        android:src="@drawable/img_profile_placeholder"
-                        app:civ_border_color="@color/profile_pic_border"
-                        app:civ_border_width="1.5dp" />
-
-                </RelativeLayout>
+                    android:padding="2dp"
+                    android:src="@drawable/img_profile_placeholder"
+                    app:civ_border_color="@color/profile_pic_border"
+                    app:civ_border_width="1.5dp" />
 
             </RelativeLayout>
 
-            <in.vibescom.groceryapp.UI.helpers.Typewriter
+            <in.vibescom.groceryapp.UI.Views.SFDLTextView
                 android:id="@+id/tv_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,7 +69,7 @@
                     android:id="@+id/tv_about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/drawable_image_margin"
+                    android:layout_marginStart="@dimen/drawable_image_margin"
                     android:layout_marginTop="2dp"
                     android:text="About"
                     android:textColor="@color/verified_color" />
@@ -130,7 +122,7 @@
                             android:padding="@dimen/margin_5dp"
                             android:text="Joined App on Feb, 14, 2017"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/main_text_size" />
+                            android:textSize="@dimen/text_size_normal" />
 
                     </RelativeLayout>
 
@@ -158,7 +150,7 @@
                             android:padding="@dimen/margin_5dp"
                             android:text="Rakesh Roshan"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/main_text_size" />
+                            android:textSize="@dimen/text_size_normal" />
 
                     </RelativeLayout>
 
@@ -187,7 +179,7 @@
                             android:padding="@dimen/margin_5dp"
                             android:text="rakeshroshan@gmail.com"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/main_text_size" />
+                            android:textSize="@dimen/text_size_normal" />
 
                     </RelativeLayout>
 
@@ -216,7 +208,7 @@
                             android:padding="@dimen/margin_5dp"
                             android:text="Contact on +91 9897772778"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/main_text_size" />
+                            android:textSize="@dimen/text_size_normal" />
 
                     </RelativeLayout>
 
@@ -245,7 +237,7 @@
                             android:padding="@dimen/margin_5dp"
                             android:text="Live in Noida,India"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/main_text_size" />
+                            android:textSize="@dimen/text_size_normal" />
 
                     </RelativeLayout>
 
@@ -274,7 +266,7 @@
                             android:padding="@dimen/margin_5dp"
                             android:text="Gender"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/main_text_size" />
+                            android:textSize="@dimen/text_size_normal" />
 
                     </RelativeLayout>
 
@@ -292,27 +284,26 @@
                 <in.vibescom.groceryapp.UI.Views.SFDRTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/drawable_image_margin"
+                    android:layout_marginStart="@dimen/drawable_image_margin"
                     android:text="Account"
                     android:textColor="@color/verified_color" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divider_size"
-                    android:layout_below="@+id/iv_edit"
                     android:layout_marginTop="3dp"
                     android:background="@color/divider_color" />
 
 
                 <RelativeLayout
-                    android:id="@+id/view_my_shop"
+                    android:id="@+id/view_my_wallet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/padding_5dp"
                     android:paddingTop="@dimen/padding_5dp">
 
                     <ImageView
-                        android:id="@+id/iv_my_shop"
+                        android:id="@+id/iv_my_wallet"
                         android:layout_width="@dimen/drawable_image_size"
                         android:layout_height="@dimen/drawable_image_size"
                         android:layout_centerVertical="true"
@@ -321,32 +312,31 @@
                         android:src="@drawable/ic_account_wallet_red" />
 
                     <in.vibescom.groceryapp.UI.Views.SFDLTextView
-                        android:id="@+id/tv_my_shop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/iv_my_shop"
+                        android:layout_toEndOf="@+id/iv_my_wallet"
                         android:padding="@dimen/margin_5dp"
                         android:text="My Wallet"
                         android:textColor="@color/name_color"
-                        android:textSize="@dimen/main_text_size" />
+                        android:textSize="@dimen/text_size_regular" />
 
                     <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_shop_status"
+                        android:id="@+id/tv_wallet_amt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="@dimen/margin_5dp"
-                        android:layout_toStartOf="@+id/iv_MyShop"
+                        android:layout_toStartOf="@+id/iv_arrow"
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="2000"
+                        android:text="Rs 2000"
                         android:textColor="@color/name_color"
                         android:textSize="@dimen/main_text_size" />
 
                     <ImageView
-                        android:id="@+id/iv_MyShop"
+                        android:id="@+id/iv_arrow"
                         android:layout_width="@dimen/arrow_icon_size"
                         android:layout_height="@dimen/arrow_icon_size"
                         android:layout_alignParentEnd="true"
@@ -363,66 +353,58 @@
                     android:layout_height="@dimen/divider_size"
                     android:background="@color/divider_color" />
 
-                <LinearLayout
-                    android:id="@+id/view_product"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/padding_5dp"
-                        android:paddingTop="@dimen/padding_5dp">
-
-                        <ImageView
-                            android:id="@+id/iv_product"
-                            android:layout_width="@dimen/drawable_image_size"
-                            android:layout_height="@dimen/drawable_image_size"
-                            android:layout_centerVertical="true"
-                            android:layout_margin="@dimen/drawable_image_margin"
-                            android:contentDescription="@string/COD"
-                            android:src="@drawable/ic_unarchive_yellow" />
-
-                        <in.vibescom.groceryapp.UI.Views.SFDLTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_toRightOf="@+id/iv_product"
-                            android:padding="@dimen/margin_5dp"
-                            android:text="My Orders"
-                            android:textColor="@color/name_color"
-                            android:textSize="@dimen/main_text_size" />
-
-                        <ImageView
-                            android:id="@+id/iv_productSell"
-                            android:layout_width="@dimen/arrow_icon_size"
-                            android:layout_height="@dimen/arrow_icon_size"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginEnd="@dimen/padding_5dp"
-                            android:contentDescription="@string/COD"
-                            android:src="@drawable/ic_arrow"
-                            android:tint="@color/verified_color" />
-                    </RelativeLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/divider_size"
-                        android:background="@color/divider_color" />
-
-                </LinearLayout>
-
-
                 <RelativeLayout
-                    android:id="@+id/view_favorites_shop"
+                    android:id="@+id/view_my_orders"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/padding_5dp"
                     android:paddingTop="@dimen/padding_5dp">
 
                     <ImageView
-                        android:id="@+id/iv_favorites_shop"
+                        android:id="@+id/iv_my_orders"
+                        android:layout_width="@dimen/drawable_image_size"
+                        android:layout_height="@dimen/drawable_image_size"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/drawable_image_margin"
+                        android:contentDescription="@string/COD"
+                        android:src="@drawable/ic_unarchive_yellow" />
+
+                    <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/iv_my_orders"
+                        android:padding="@dimen/margin_5dp"
+                        android:text="My Orders"
+                        android:textColor="@color/name_color"
+                        android:textSize="@dimen/text_size_regular" />
+
+                    <ImageView
+                        android:layout_width="@dimen/arrow_icon_size"
+                        android:layout_height="@dimen/arrow_icon_size"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/padding_5dp"
+                        android:contentDescription="@string/COD"
+                        android:src="@drawable/ic_arrow"
+                        android:tint="@color/verified_color" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_size"
+                    android:background="@color/divider_color" />
+
+
+                <RelativeLayout
+                    android:id="@+id/view_my_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding_5dp"
+                    android:paddingTop="@dimen/padding_5dp">
+
+                    <ImageView
+                        android:id="@+id/iv_my_cart"
                         android:layout_width="@dimen/drawable_image_size"
                         android:layout_height="@dimen/drawable_image_size"
                         android:layout_centerVertical="true"
@@ -434,14 +416,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/iv_favorites_shop"
+                        android:layout_toEndOf="@+id/iv_my_cart"
                         android:padding="@dimen/margin_5dp"
                         android:text="My Cart"
                         android:textColor="@color/name_color"
-                        android:textSize="@dimen/main_text_size" />
+                        android:textSize="@dimen/text_size_regular" />
 
                     <ImageView
-                        android:id="@+id/iv_favoriteShop"
                         android:layout_width="@dimen/arrow_icon_size"
                         android:layout_height="@dimen/arrow_icon_size"
                         android:layout_alignParentEnd="true"
@@ -459,14 +440,14 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/view_iv_favorites_feed"
+                    android:id="@+id/view_my_addresses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/padding_5dp"
                     android:paddingTop="@dimen/padding_5dp">
 
                     <ImageView
-                        android:id="@+id/iv_favorites_feed"
+                        android:id="@+id/iv_my_addresses"
                         android:layout_width="@dimen/drawable_image_size"
                         android:layout_height="@dimen/drawable_image_size"
                         android:layout_centerVertical="true"
@@ -478,15 +459,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/iv_favorites_feed"
+                        android:layout_toEndOf="@+id/iv_my_addresses"
                         android:padding="@dimen/margin_5dp"
                         android:text="My Addresses"
                         android:textColor="@color/name_color"
-                        android:textSize="@dimen/main_text_size" />
+                        android:textSize="@dimen/text_size_regular" />
 
 
                     <ImageView
-                        android:id="@+id/iv_favoriteFeed"
                         android:layout_width="@dimen/arrow_icon_size"
                         android:layout_height="@dimen/arrow_icon_size"
                         android:layout_alignParentEnd="true"
@@ -504,15 +484,14 @@
                     android:background="@color/divider_color" />
 
                 <RelativeLayout
-
-                    android:id="@+id/view_My_circle"
+                    android:id="@+id/view_notifications"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/padding_5dp"
                     android:paddingTop="@dimen/padding_5dp">
 
                     <ImageView
-                        android:id="@+id/iv_My_circle"
+                        android:id="@+id/iv_notifications"
                         android:layout_width="@dimen/drawable_image_size"
                         android:layout_height="@dimen/drawable_image_size"
                         android:layout_centerVertical="true"
@@ -524,14 +503,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/iv_My_circle"
+                        android:layout_toEndOf="@+id/iv_notifications"
                         android:padding="@dimen/margin_5dp"
                         android:text="Notification Preferences"
                         android:textColor="@color/name_color"
-                        android:textSize="@dimen/main_text_size" />
+                        android:textSize="@dimen/text_size_regular" />
 
                     <ImageView
-                        android:id="@+id/iv_myCircle"
                         android:layout_width="@dimen/arrow_icon_size"
                         android:layout_height="@dimen/arrow_icon_size"
                         android:layout_alignParentEnd="true"
@@ -550,14 +528,14 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/view_refer_and_earn"
+                    android:id="@+id/view_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="@dimen/padding_5dp"
                     android:paddingTop="@dimen/padding_5dp">
 
                     <ImageView
-                        android:id="@+id/iv_refer_and_earn"
+                        android:id="@+id/iv_password"
                         android:layout_width="@dimen/drawable_image_size"
                         android:layout_height="@dimen/drawable_image_size"
                         android:layout_centerVertical="true"
@@ -570,15 +548,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/iv_refer_and_earn"
+                        android:layout_toEndOf="@+id/iv_password"
                         android:padding="@dimen/margin_5dp"
                         android:text="Change Password"
                         android:textColor="@color/name_color"
-                        android:textSize="@dimen/main_text_size" />
+                        android:textSize="@dimen/text_size_regular" />
 
 
                     <ImageView
-                        android:id="@+id/iv_refer_and_earn_errow"
                         android:layout_width="@dimen/arrow_icon_size"
                         android:layout_height="@dimen/arrow_icon_size"
                         android:layout_alignParentEnd="true"
@@ -615,11 +592,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toRightOf="@+id/iv_logout"
+                        android:layout_toEndOf="@+id/iv_logout"
                         android:padding="@dimen/margin_5dp"
                         android:text="Logout"
                         android:textColor="@color/name_color"
-                        android:textSize="@dimen/main_text_size" />
+                        android:textSize="@dimen/text_size_regular" />
 
                     <ImageView
                         android:layout_width="@dimen/arrow_icon_size"

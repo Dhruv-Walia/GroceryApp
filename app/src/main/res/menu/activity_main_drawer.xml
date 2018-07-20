@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_offer_purple"
+            android:title="Offers" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_account_circle_orange"
+            android:title="Account" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_unarchive_yellow"
+            android:title="Your Orders" />
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@drawable/ic_account_wallet_red"
+            android:title="Your Wallet" />
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_shopping_basket"
+            android:title="Your Cart" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notifications_amber"
+            android:title="Notifications" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_customer"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Customer Services" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_contacts_black"
+                android:title="Contact Us" />
+        </menu>
+    </item>
+
+</menu>
