@@ -11,39 +11,43 @@ import in.vibescom.groceryapp.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    Button existing_user_btn,Signup;
+    EditText Fullname, EmailId,MobileNumber,Location,Password,Confirm_Password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        Button auser = findViewById(R.id.a_user);
-        Button signup = findViewById(R.id.signUpBtn);
-        EditText u_full_name = findViewById(R.id.fullName);
-        EditText u_email = findViewById(R.id.userEmailId);
-        EditText u_number = findViewById(R.id.mobileNumber);
-        EditText u_location = findViewById(R.id.location);
-        EditText u_password = findViewById(R.id.password);
-        EditText u_confirm = findViewById(R.id.confirmPassword);
+        existing_user_btn= findViewById(R.id.btn_existing_user);
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        Signup = findViewById(R.id.btn_signUp);
+        Fullname = findViewById(R.id.et_fullName);
+        EmailId = findViewById(R.id.et_userEmailId);
+        MobileNumber = findViewById(R.id.et_mobileNumber);
+        Location = findViewById(R.id.et_location);
+        Password = findViewById(R.id.et_password);
+        Confirm_Password = findViewById(R.id.et_confirmPassword);
+
+        Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( u_full_name.getText().toString().length() == 0 )
-                    u_full_name.setError( "This field is required!" );
+                if( Fullname.getText().toString().length() == 0 )
+                    Fullname.setError( "This field is required!" );
 
-                else if( u_password.getText().toString().length() == 0 )
-                    u_password.setError( "This field is required!" );
+                else if( Password.getText().toString().length() == 0 )
+                    Password.setError( "This field is required!" );
 
-                else if( u_email.getText().toString().length() == 0 )
-                    u_email.setError( "This field is required!" );
+                else if( EmailId.getText().toString().length() == 0 )
+                    EmailId.setError( "This field is required!" );
 
-                else if( u_number.getText().toString().length() == 0 )
-                    u_number.setError( "This field is required!" );
+                else if( MobileNumber.getText().toString().length() == 0 )
+                    MobileNumber.setError( "This field is required!" );
 
-                else if( u_location.getText().toString().length() == 0 )
-                    u_location.setError( "This field is required!" );
+                else if( Location.getText().toString().length() == 0 )
+                    Location.setError( "This field is required!" );
 
-                else if( u_confirm.getText().toString().length() == 0 )
-                    u_confirm.setError( "This field is required!" );
+                else if( Confirm_Password.getText().toString().length() == 0 )
+                    Confirm_Password.setError( "This field is required!" );
 
                 else{
                     Intent signup = new Intent(SignUpActivity.this,SignInActivity.class);
@@ -52,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        auser.setOnClickListener(new View.OnClickListener() {
+        existing_user_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent a_i = new Intent(SignUpActivity.this,HomeActivity.class);

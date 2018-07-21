@@ -28,27 +28,27 @@ import in.vibescom.groceryapp.R;
 public class SignInActivity extends AppCompatActivity {
 
 
-    TextView create,forgot;
-    EditText email_id,password;
-    Button sign;
-    CheckBox check;
-    String org_str ;
-    Spannable ssBuilder;
+    TextView CreateAccount,ForgotPassword;
+    EditText Email,Password;
+    Button SignIn;
+    CheckBox ShowPassword;
+    String m_org_str ;
+    Spannable Span_ssBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        create = findViewById(R.id.createAccount);
-        sign = findViewById(R.id.loginBtn);
-        password = findViewById(R.id.login_password);
-        forgot = findViewById(R.id.forgot_password);
-        check = findViewById(R.id.show_hide_password);
-        email_id = findViewById(R.id.login_emailid);
+        CreateAccount = findViewById(R.id.tv_createAccount);
+        SignIn = findViewById(R.id.btn_login);
+        Password = findViewById(R.id.et_login_password);
+        ForgotPassword = findViewById(R.id.tv_forgot_password);
+        ShowPassword = findViewById(R.id.ck_show_hide_password);
+        Email = findViewById(R.id.et_emailid);
 
-        org_str=create.getText().toString();
+        m_org_str=CreateAccount.getText().toString();
 
-        create.setOnClickListener(new View.OnClickListener() {
+        CreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent cre_i = new Intent(SignInActivity.this,SignUpActivity.class);
@@ -56,14 +56,14 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        sign.setOnClickListener(new View.OnClickListener() {
+        SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( email_id.getText().toString().length() == 0 )
-                    email_id.setError( "This field is required!" );
+                if( Email.getText().toString().length() == 0 )
+                    Email.setError( "This field is required!" );
 
-                else if( password.getText().toString().length() == 0 )
-                    password.setError( "This field is required!" );
+                else if( Password.getText().toString().length() == 0 )
+                    Password.setError( "This field is required!" );
 
                 else{
                     Intent signin = new Intent(SignInActivity.this,HomeActivity.class);
@@ -72,14 +72,14 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        SpannableStringBuilder ssBuilder = new SpannableStringBuilder(org_str);
+        SpannableStringBuilder ssBuilder = new SpannableStringBuilder(m_org_str);
 
         ssBuilder.setSpan(new RelativeSizeSpan(1.7f), 20,27, 0);
 
         ssBuilder.setSpan(
                 new ForegroundColorSpan(Color.BLACK),
-                org_str.indexOf("Do not have account?"),
-                org_str.indexOf("Do not have account?") + String.valueOf("Do not have account?").length(),
+                m_org_str.indexOf("Do not have account?"),
+                m_org_str.indexOf("Do not have account?") + String.valueOf("Do not have account?").length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         );
 
@@ -87,14 +87,14 @@ public class SignInActivity extends AppCompatActivity {
         ssBuilder.setSpan(new RelativeSizeSpan(1.4f), 0,21, 0);
         ssBuilder.setSpan(
                 new ForegroundColorSpan(Color.BLUE),
-                org_str.indexOf("SignUp"),
-                org_str.indexOf("SignUp") + String.valueOf("SignUp").length(),
+                m_org_str.indexOf("SignUp"),
+                m_org_str.indexOf("SignUp") + String.valueOf("SignUp").length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         );
 
 
-        create.setText(ssBuilder);
-        forgot.setOnClickListener(new View.OnClickListener() {
+        CreateAccount.setText(ssBuilder);
+        ForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent for_i = new Intent(SignInActivity.this,SignUpActivity.class);
@@ -102,16 +102,16 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        ShowPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // checkbox status is changed from uncheck to checked.
                 if (!isChecked) {
                     // show password
-                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    Password.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 } else {
                     // hide password
-                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    Password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 }
             }
         });
