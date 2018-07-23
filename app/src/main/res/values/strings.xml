@@ -22,6 +22,20 @@
     <string name="nav_customer">Customer Services</string>
     <string name="nav_contact">Contact Us</string>
 
+    <string name="wallet_balance">Wallet Balance</string>
+    <string name="add_monet_wallet">Add Money To Wallet</string>
+    <string name="offer_points">Offer Points</string>
+    <string name="wallet_transactions">Wallet Transactions</string>
+    <string name="points_demo">200 pt</string>
+    <string name="amount_demo">\u20B9  4000</string>
+    <string name="Rs">\u20B9  </string>
+    <string name="wallet_see_all">See All</string>
+    <string name="request_statement">Request Transaction Statement</string>
+    <string name="wallet_terms">Wallet Terms </string>
+    <string name="wallet_info">The MilkGrocery Wallet is a pre-paid credit wallet that is associated with the account.
+        Wallet allows you to pay the amount in a hassle free manner. You can shop multiple times without adding your card details every time you order yor groceries.\n\nAmount is automatically deducted from your "Wallet" at the time of checkout until you run out of cash.
+        \n\nWallet also gets automatically credited when cash-back is issued,or return order credits etc.</string>
+
     <string-array name="noida_sector_list">
         <item name = "Chhajarsi Colony">Chhajarsi Colony</item>
         <item name = "Dadri Road">Dadri Road</item>

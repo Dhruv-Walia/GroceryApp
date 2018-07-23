@@ -16,18 +16,18 @@ public class FragmentUtil {
      * - if the fragment is already displayed (trying to change the fragment with the same), it will not do anything
      *
      * @param fragment        the new fragment display
-     * @param saveInBackstack if we want the fragment to be in backstack
+     * @param saveInBackStack if we want the fragment to be in backstack
      * @param animate         if we want a nice animation or not
      */
-    public static void changeFragment(FragmentManager fragmentManager, Fragment fragment, boolean saveInBackstack, boolean animate) {
+    public static void changeFragment(FragmentManager fragmentManager, Fragment fragment, boolean saveInBackStack, boolean animate) {
         String backStateName = fragment.getClass().getName();
         try {
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             if (animate) {
                 transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
             }
-            transaction.replace(R.id.root_container,fragment,backStateName);
-            if (saveInBackstack) {
+            transaction.replace(R.id.frame,fragment,backStateName);
+            if (saveInBackStack) {
                 transaction.addToBackStack(backStateName);
             }
 
@@ -56,7 +56,7 @@ public class FragmentUtil {
                 if (animate) {
                     transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
                 }
-                transaction.replace(R.id.root_container,fragment,backStateName);
+                transaction.replace(R.id.frame,fragment,backStateName);
                 if (saveInBackstack) {
                     transaction.addToBackStack(backStateName);
                 }
@@ -86,7 +86,7 @@ public class FragmentUtil {
             if (animate) {
                 transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
             }
-            transaction.replace(R.id.root_container, fragment, backStateName);
+            transaction.replace(R.id.frame, fragment, backStateName);
             if (saveInBackstack) {
                 transaction.addToBackStack(backStateName);
             }
@@ -114,7 +114,7 @@ public class FragmentUtil {
             if (animate) {
                 transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
             }
-            transaction.add(R.id.root_container, fragment, backStateName);
+            transaction.add(R.id.frame, fragment, backStateName);
             if (saveInBackstack) {
                 transaction.addToBackStack(backStateName);
             }

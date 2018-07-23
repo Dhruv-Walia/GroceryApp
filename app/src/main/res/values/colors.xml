@@ -7,6 +7,7 @@
     <color name="theme_color">#D1404B</color>
     <color name="theme_color_faded">#40D1404B</color>
     <color name="window_background">#FFFFFF</color>
+    <color name="window_dash_back">#F2F2F2</color>
     <color name="tab_request_color">#30C430</color>
     <color name="tab_invitation_color">#00B7DA</color>
     <color name="transparent">@android:color/transparent</color>

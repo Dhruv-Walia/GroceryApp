@@ -1,0 +1,40 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:fitsSystemWindows="true"
+    app:contentInsetLeft="@dimen/toolbar_content_inset_start"
+    app:contentInsetStart="@dimen/toolbar_content_inset_start"
+    app:layout_scrollFlags="enterAlways"
+    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btn_cart"
+            android:contentDescription="@string/COD"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_5dp"
+            style="@style/toolbarCartImageButton"/>
+
+        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+            android:id="@+id/tv_cartCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="0"
+            android:layout_marginEnd="@dimen/margin_5dp"
+            android:gravity="center"
+            style="@style/toolbarCartCountTextView"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/text_size_micro"  />
+
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>
