@@ -94,10 +94,11 @@ public class SignInActivity extends AppCompatActivity {
 
 
         CreateAccount.setText(ssBuilder);
+
         ForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent for_i = new Intent(SignInActivity.this,SignUpActivity.class);
+                Intent for_i = new Intent(SignInActivity.this,ForgotPasswordActivity.class);
                 startActivity(for_i);
             }
         });

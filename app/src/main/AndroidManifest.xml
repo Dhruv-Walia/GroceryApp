@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.Activities.SignInActivity"
+        <activity
+            android:name=".UI.Activities.SignInActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,11 +31,13 @@
         </activity>
         <activity
             android:name=".UI.Activities.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.Activities.SignUpActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".UI.Activities.ForgotPasswordActivity" />
+        <activity android:name=".UI.Activities.AddressActivity"></activity>
     </application>
 
 </manifest>
