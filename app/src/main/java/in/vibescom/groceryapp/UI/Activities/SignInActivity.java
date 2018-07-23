@@ -23,6 +23,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import in.vibescom.groceryapp.R;
 
 public class SignInActivity extends AppCompatActivity {
@@ -34,11 +37,14 @@ public class SignInActivity extends AppCompatActivity {
     CheckBox ShowPassword;
     String m_org_str ;
     Spannable Span_ssBuilder;
+//    @BindView(R.id.tv_createAccount)
+  //  TextView tvCreateAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+        ButterKnife.bind(this);
         CreateAccount = findViewById(R.id.tv_createAccount);
         SignIn = findViewById(R.id.btn_login);
         Password = findViewById(R.id.et_login_password);
@@ -48,12 +54,9 @@ public class SignInActivity extends AppCompatActivity {
 
         m_org_str=CreateAccount.getText().toString();
 
-        CreateAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent cre_i = new Intent(SignInActivity.this,SignUpActivity.class);
-                startActivity(cre_i);
-            }
+        CreateAccount.setOnClickListener(view -> {
+            Intent cre_i = new Intent(SignInActivity.this,SignUpActivity.class);
+            startActivity(cre_i);
         });
 
         SignIn.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +74,8 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         });
+
+
 
         SpannableStringBuilder ssBuilder = new SpannableStringBuilder(m_org_str);
 
@@ -119,4 +124,8 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
+    //@OnClick(R.id.btn_login)
+    //void loginButton(){
+
+    //}
 }
