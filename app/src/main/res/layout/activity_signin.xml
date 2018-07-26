@@ -18,8 +18,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="10dp"
+            android:scaleX="3"
             android:text="LOGIN"
-            android:textColor="#000000"
+            android:textColor="#010239"
+            android:background="#d9cece"
             android:textStyle="bold"
             android:textSize="@dimen/text_size_login"
             />
@@ -38,7 +40,7 @@
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_email_black"
+                android:drawableStart="@drawable/ic_email_red_24dp"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Email"
@@ -64,7 +66,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_phone_android_black"
+                android:drawableStart="@drawable/ic_https_red_400"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Password"
@@ -89,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="SHOW PASSWORD"
-                android:textColor="#000000"
+                android:textColor="#0f37e7"
                 android:textSize="@dimen/text_size_normal" />
 
             <TextView
@@ -100,7 +102,7 @@
                 android:gravity="end"
                 android:padding="5dp"
                 android:text="Forgot Password"
-                android:textColor="#000000"
+                android:textColor="#0f37e7"
                 android:textSize="@dimen/text_size_normal" />
 
         </LinearLayout>
@@ -112,6 +114,7 @@
             android:layout_marginTop="3dp"
             android:padding="3dp"
             android:text="LOGIN"
+            android:drawable="@drawable/custom_button"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_login"
             android:textStyle="bold" />

@@ -21,9 +21,12 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="Sign Up"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#FFFFFF"
             android:textSize="@dimen/text_size_xlarge"
-            android:textStyle="bold" />
+            android:scaleX="3"
+            android:textStyle="bold"
+            android:shape="oval"
+            android:background="#c2b9b8"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/til_promo1"
@@ -36,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_perm_identity_black"
+                android:drawableStart="@drawable/ic_person_outline_yellow"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Enter FullName"
@@ -62,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_email_black"
+                android:drawableStart="@drawable/ic_email_red_24dp"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Enter Email"
@@ -113,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_location_black"
+                android:drawableStart="@drawable/ic_location_indigo"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Location"
@@ -139,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_https_black"
+                android:drawableStart="@drawable/ic_https_red_400"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Password"
@@ -164,7 +167,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/ic_https_black"
+                android:drawableStart="@drawable/ic_https_red_400"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
                 android:hint="Confirm Password"
@@ -183,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:text="Accept Terms and Conditions"
-            android:textColor="#000000"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_normal" />
 
         <Button
@@ -193,6 +196,7 @@
             android:layout_marginTop="15dp"
             android:padding="3dp"
             android:text="Sign Up"
+            android:drawable="@drawable/custom_button"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_xlarge"
             android:textStyle="bold" />
@@ -207,8 +211,8 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="Existing User"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+            android:drawable="@drawable/custom_button"
+            />
 
 
 

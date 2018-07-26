@@ -50,7 +50,7 @@ public class WalletTransactionAdapter extends RecyclerView.Adapter<WalletTransac
     class TransactionHolder extends RecyclerView.ViewHolder{
 
         @BindView(R.id.tv_wallet_head)
-        TextView tvWalletHead;3
+        TextView tvWalletHead;
         @BindView(R.id.tv_wallet_date)
         TextView tvWalletDate;
         @BindView(R.id.tv_wallet_amt)

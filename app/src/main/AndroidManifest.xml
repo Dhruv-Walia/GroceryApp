@@ -23,21 +23,39 @@
         <activity
             android:name=".UI.Activities.SignInActivity"
             android:screenOrientation="portrait">
+
+
+        </activity>
+
+        <activity
+            android:name=".UI.Activities.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".UI.Activities.SignUpActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".UI.Activities.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".UI.Activities.AddressActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".UI.Activities.FeedsActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".UI.Activities.HomeActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".UI.Activities.SignUpActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".UI.Activities.ForgotPasswordActivity" />
-        <activity android:name=".UI.Activities.AddressActivity"></activity>
+
+        <activity android:name=".UI.Activities.ZoomImageActivity"></activity>
+
     </application>
 
 </manifest>

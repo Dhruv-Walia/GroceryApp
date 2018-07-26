@@ -7,71 +7,100 @@
     android:id="@+id/linearlay1"
     tools:context=".UI.Activities.AddressActivity">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilayout1"
+      <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:text="Enter Your address"
+        android:textAllCaps="true"
+        android:id="@+id/label_tv"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_xlarge"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        />
 
-        <EditText
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_sector"
+        android:textSize="@dimen/text_size_large"
+        android:text="enter your sector"
+        android:textColor="#000000"
+        android:textAllCaps="true"/>
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_sector"
+            android:id="@+id/spin_sector"
             android:hint="Enter Your Sector"
-            android:inputType="number"
-            android:textAllCaps="true"
+            android:entries="@array/noida_sector_list"
             android:textSize="@dimen/text_size_normal"
             android:textColor="#000000" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_locality"
-            android:hint="Enter Your Locality"
+            android:visibility="invisible"
+            android:id="@+id/tv_tower_name"
+            android:text="enter your tower name"
             android:textAllCaps="true"
-            android:textSize="@dimen/text_size_normal"
-            android:textColor="#000000" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
+            android:textColor="#000000"
+            android:textSize="@dimen/text_size_large"
+                />
+            <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_tower"
-            android:hint="Enter Your Locality"
+            android:id="@+id/spin_tower"
+                android:visibility="invisible"
             android:textAllCaps="true"
             android:textSize="@dimen/text_size_normal"
             android:textColor="#000000" />
 
-    </android.support.design.widget.TextInputLayout>
-
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilayout4"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:id="@+id/tv_apartment"
+        android:text="enter your apartment"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size_large"/>
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_flat_no"
-            android:hint="Enter Your Locality"
+            android:visibility="invisible"
+            android:id="@+id/spin_apartment"
             android:textAllCaps="true"
             android:textSize="@dimen/text_size_normal"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            />
 
-    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/tv_flat_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="enter your flat number"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_large"
+        android:textColor="#000000"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spin_flat_no"
+            android:visibility="invisible"
+            android:hint="Enter Your Flat number"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_normal"
+            android:textColor="#000000"
+            android:paddingBottom="11dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:visibility="invisible"
+        android:id="@+id/btn_submit_addr"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_login"/>
 
 
 </LinearLayout>
