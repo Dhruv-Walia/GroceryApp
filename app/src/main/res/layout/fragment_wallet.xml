@@ -93,9 +93,7 @@
                                     android:textSize="@dimen/text_size_amount"
                                     android:text="4000" />
 
-
                             </LinearLayout>
-
 
                         </RelativeLayout>
 
@@ -105,11 +103,11 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_marginTop="@dimen/margin_15dp"
-                        android:layout_height="60dp"
-                        android:padding="@dimen/margin_5dp"
-                        android:background="@drawable/canvas_edittext_round_corner">
+                        android:layout_height="65dp"
+                        android:padding="@dimen/margin_5dp">
 
                         <in.vibescom.groceryapp.UI.Views.SFDREditText
+                            android:id="@+id/et_add_amount"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/customEditText"
@@ -121,6 +119,7 @@
                             android:paddingStart="@dimen/margin_10dp"
                             android:paddingEnd="@dimen/margin_10dp"
                             android:inputType="numberDecimal"
+                            android:background="@drawable/canvas_edittext_round_corner"
                             android:textCursorDrawable="@drawable/canvas_color_cursor"/>
 
                         <in.vibescom.groceryapp.UI.Views.SFDRButton
@@ -139,7 +138,6 @@
 
 
                 </LinearLayout>
-
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -171,7 +169,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:textColor="@color/text_color_regular"
-                            android:textSize="@dimen/text_size_large"
+                            android:textSize="@dimen/text_size_xlarge"
                             android:text="@string/offer_points"/>
 
                         <in.vibescom.groceryapp.UI.Views.SFDRTextView
@@ -225,7 +223,7 @@
                     </RelativeLayout>
 
                     <android.support.v7.widget.RecyclerView
-                        android:id="@+id/recycler_view_filter"
+                        android:id="@+id/rv_wallet_transactions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clipToPadding="false"
@@ -241,7 +239,7 @@
                         android:background="@color/divider_color" />
 
                     <RelativeLayout
-                        android:id="@+id/view_statement"
+                        android:id="@+id/view_wallet_statement"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_10dp">
@@ -250,8 +248,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/text_color_regular"
+                            android:layout_centerVertical="true"
                             android:textSize="@dimen/text_size_large"
-                            android:text="@string/request_statement"/>
+                            android:text="@string/request_statement"
+                            tools:ignore="RelativeOverlap" />
 
                         <ImageView
                             android:id="@+id/iv_arrow"
