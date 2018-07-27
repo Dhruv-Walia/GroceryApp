@@ -277,4 +277,6 @@
 
 
     </string-array>
+
+    <string name="product_price">MRP :\u0020Rs\u0020<strike>80</strike></string>
 </resources>
