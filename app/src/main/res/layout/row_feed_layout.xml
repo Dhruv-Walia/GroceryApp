@@ -53,7 +53,7 @@
         android:layout_below="@+id/image"
         android:textColor="#000"
         android:id="@+id/product_desc"
-        android:text="Product Name :"
+        android:text="Product Description :"
         android:textSize="@dimen/text_size_normal"/>
 
     </LinearLayout>
