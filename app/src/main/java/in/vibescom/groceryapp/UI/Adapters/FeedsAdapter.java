@@ -15,19 +15,19 @@ import in.vibescom.groceryapp.UI.Activities.FeedsActivity;
 import in.vibescom.groceryapp.UI.Activities.ZoomImageActivity;
 
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder> {
 
     ArrayList<String> personNames;
     ArrayList<Integer> personImages;
     Context context;
 
-    public CustomAdapter(Context context, ArrayList<String> personNames, ArrayList<String> names, ArrayList<Integer> personImages) {
+    public FeedsAdapter(Context context, ArrayList<String> personNames, ArrayList<String> names, ArrayList<Integer> personImages) {
         this.context = context;
         this.personNames = personNames;
         this.personImages = personImages;
     }
 
-    public CustomAdapter(FeedsActivity feedsActivity, ArrayList<String> personNames, ArrayList<Integer> personImages) {
+    public FeedsAdapter(FeedsActivity feedsActivity, ArrayList<String> personNames, ArrayList<Integer> personImages) {
         this.context = feedsActivity;
         this.personNames = personNames;
         this.personImages = personImages;

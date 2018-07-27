@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import in.vibescom.groceryapp.R;
-import in.vibescom.groceryapp.UI.Adapters.CustomAdapter;
+import in.vibescom.groceryapp.UI.Adapters.FeedsAdapter;
 
 public class FeedsActivity extends AppCompatActivity {
 
@@ -61,9 +61,9 @@ public class FeedsActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
 
-        //  call the constructor of CustomAdapter to send the reference and data to Adapter
-        CustomAdapter customAdapter = new CustomAdapter(FeedsActivity.this,personNames,personImages);
+        //  call the constructor of FeedsAdapter to send the reference and data to Adapter
+        FeedsAdapter feedsAdapter = new FeedsAdapter(FeedsActivity.this,personNames,personImages);
 
-        recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
+        recyclerView.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
     }
 }
