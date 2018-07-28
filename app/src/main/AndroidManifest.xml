@@ -30,7 +30,13 @@
         <activity
             android:name=".UI.Activities.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
         <activity
             android:name=".UI.Activities.SignUpActivity"
@@ -43,16 +49,6 @@
         <activity
             android:name=".UI.Activities.AddressActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".UI.Activities.FeedsActivity" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
 
         <activity android:name=".UI.Activities.ZoomImageActivity"></activity>
 

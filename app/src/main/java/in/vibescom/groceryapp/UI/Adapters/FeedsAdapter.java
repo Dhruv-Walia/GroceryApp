@@ -1,8 +1,6 @@
 package in.vibescom.groceryapp.UI.Adapters;
-import android.content.Context;
-import android.content.Intent;
+
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import in.vibescom.groceryapp.R;
-import in.vibescom.groceryapp.UI.Activities.FeedsActivity;
-import in.vibescom.groceryapp.UI.Activities.ZoomImageActivity;
+import in.vibescom.groceryapp.UI.Fragments.DashboardFragment;
 
 
 public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder> {
@@ -24,10 +20,10 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
     ArrayList<String> personNames;
     ArrayList<Integer> personImages;
     Button Add2Cart;
-    Context context;
+    DashboardFragment context;
 
-    public FeedsAdapter(FeedsActivity feedsActivity, ArrayList<String> personNames, ArrayList<Integer> personImages,Button Add2Cart) {
-        this.context = feedsActivity;
+    public FeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages, Button Add2Cart) {
+        this.context = dashboardfragment;
         this.personNames = personNames;
         this.personImages = personImages;
         this.Add2Cart = Add2Cart;
@@ -63,9 +59,9 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
             @Override
             public void onClick(View view) {
                 // open another activity on item click
-                Intent intent = new Intent(context, ZoomImageActivity.class);
+                /*Intent intent = new Intent(context, ZoomImageActivity.class);
                 intent.putExtra("image", personImages.get(position)); // put image data in Intent
-                context.startActivity(intent); // start Intent
+                context.startActivity(intent); // start Intent*/
             }
         });
 
