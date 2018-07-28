@@ -278,5 +278,5 @@
 
     </string-array>
 
-    <string name="product_price">MRP :\u0020Rs\u0020<strike>80</strike></string>
+    <string name="product_price"><strike>MRP :\u0020Rs\u002080</strike></string>
 </resources>

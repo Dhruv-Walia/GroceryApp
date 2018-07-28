@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,6 +13,8 @@ import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Adapters.FeedsAdapter;
 
 public class FeedsActivity extends AppCompatActivity {
+
+    Button Add2Card;
 
     // ArrayList for person names
     ArrayList<String> personNames = new ArrayList<>
@@ -62,7 +65,7 @@ public class FeedsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
 
         //  call the constructor of FeedsAdapter to send the reference and data to Adapter
-        FeedsAdapter feedsAdapter = new FeedsAdapter(FeedsActivity.this,personNames,personImages);
+        FeedsAdapter feedsAdapter = new FeedsAdapter(FeedsActivity.this,personNames,personImages,Add2Card);
 
         recyclerView.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
     }

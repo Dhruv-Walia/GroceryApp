@@ -1,12 +1,16 @@
 package in.vibescom.groceryapp.UI.Adapters;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,18 +23,14 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
 
     ArrayList<String> personNames;
     ArrayList<Integer> personImages;
+    Button Add2Cart;
     Context context;
 
-    public FeedsAdapter(Context context, ArrayList<String> personNames, ArrayList<String> names, ArrayList<Integer> personImages) {
-        this.context = context;
-        this.personNames = personNames;
-        this.personImages = personImages;
-    }
-
-    public FeedsAdapter(FeedsActivity feedsActivity, ArrayList<String> personNames, ArrayList<Integer> personImages) {
+    public FeedsAdapter(FeedsActivity feedsActivity, ArrayList<String> personNames, ArrayList<Integer> personImages,Button Add2Cart) {
         this.context = feedsActivity;
         this.personNames = personNames;
         this.personImages = personImages;
+        this.Add2Cart = Add2Cart;
     }
 
     @Override
@@ -50,6 +50,14 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
         holder.name.setText(personNames.get(position));
         //holder.desc.setText(personDesc.get(position));
         holder.image.setImageResource(personImages.get(position));
+
+        holder.Add2Cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.Add2Cart.setBackgroundColor(Color.RED);
+            }
+        });
+
         // implement setOnClickListener event on item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +83,9 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
         //TextView desc;
         ImageView image;
 
+        //Button Add to cart
+        Button Add2Cart;
+
         public MyViewHolder(View itemView) {
             super(itemView);
 
@@ -83,6 +94,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
             //desc = (TextView) itemView.findViewById(R.id.desc);
             image = (ImageView) itemView.findViewById(R.id.image);
 
+            Add2Cart = (Button) itemView.findViewById(R.id.btn_card_add);
         }
     }
 }
