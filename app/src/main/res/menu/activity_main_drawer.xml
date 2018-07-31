@@ -32,10 +32,7 @@
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_notifications_amber"
             android:title="Notifications" />
-        <item
-            android:id="@+id/nav_login"
-            android:icon="@drawable/ic_account_circle_orange"
-            android:title="LOG IN" />
+
     </group>
 
     <item android:title="Communicate">
