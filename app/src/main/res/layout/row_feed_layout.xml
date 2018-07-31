@@ -23,14 +23,17 @@
         app:cardElevation="@dimen/margin_10dp"
         app:cardMaxElevation="@dimen/margin_10dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true">
-        <!--
-    grid items for RecyclerView
-    -->
+        app:cardUseCompatPadding="true"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+
+        <!--grid items for RecyclerView-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/image"
@@ -50,12 +53,13 @@
                 android:textColor="#000"
                 android:textSize="@dimen/text_size_normal" />
 
+
             <TextView
-                android:id="@+id/product_desc"
+                android:id="@+id/product_pck"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/product_name"
-                android:text="Product Description :"
+                android:text="Packaged Type :"
                 android:textColor="#000"
                 android:textSize="@dimen/text_size_normal" />
 
@@ -63,10 +67,11 @@
                 android:id="@+id/product_wght"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/product_desc"
+                android:layout_below="@+id/product_pck"
                 android:text="Product Weight :"
                 android:textColor="#000"
                 android:textSize="@dimen/text_size_normal" />
+
 
             <TextView
                 android:id="@+id/product_orig_price"

@@ -1,5 +1,6 @@
 package in.vibescom.groceryapp.UI.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -78,6 +79,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.nav_notification) {
 
+        }
+        else if (id == R.id.nav_login){
+            Intent login_act = new Intent(HomeActivity.this,SignInActivity.class);
+            startActivity(login_act);
         }
 
         drawer.closeDrawer(GravityCompat.START);
