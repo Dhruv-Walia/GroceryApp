@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import in.vibescom.groceryapp.R;
@@ -22,11 +24,13 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
     Button Add2Cart;
     DashboardFragment context;
 
-    public FeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages, Button Add2Cart) {
+    public FeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages,
+                        Button Add2Cart) {
         this.context = dashboardfragment;
         this.personNames = personNames;
         this.personImages = personImages;
         this.Add2Cart = Add2Cart;
+
     }
 
     @Override
@@ -81,6 +85,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
 
         //Button Add to cart
         Button Add2Cart;
+
 
         public MyViewHolder(View itemView) {
             super(itemView);

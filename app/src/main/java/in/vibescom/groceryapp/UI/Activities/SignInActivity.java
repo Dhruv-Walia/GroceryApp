@@ -23,19 +23,36 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import in.vibescom.groceryapp.R;
 
+import static android.provider.ContactsContract.Intents.Insert.EMAIL;
+
 public class SignInActivity extends AppCompatActivity {
 
 
-    TextView CreateAccount,ForgotPassword;
+    TextView CreateAccount,ForgotPassword,UserName,UserEmail,UserID;
     EditText Email,Password;
     Button SignIn;
     CheckBox ShowPassword;
     String m_org_str ;
+    LoginButton FBloginButton;
+    CallbackManager callbackManager;
     Spannable Span_ssBuilder;
 //    @BindView(R.id.tv_createAccount)
   //  TextView tvCreateAccount;
@@ -51,6 +68,52 @@ public class SignInActivity extends AppCompatActivity {
         ForgotPassword = findViewById(R.id.tv_forgot_password);
         ShowPassword = findViewById(R.id.ck_show_hide_password);
         Email = findViewById(R.id.et_emailid);
+
+        UserName = findViewById(R.id.tv_name);
+        UserEmail = findViewById(R.id.tv_email);
+        UserID = findViewById(R.id.tv_id);
+
+        FBloginButton = (LoginButton) findViewById(R.id.fb_login_button);
+
+        FBloginButton = (LoginButton) findViewById(R.id.fb_login_button);
+        FBloginButton.setReadPermissions(Arrays.asList(EMAIL,"public_profile"));
+
+
+        callbackManager = CallbackManager.Factory.create();
+        FBloginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+                String userId =  loginResult.getAccessToken().getUserId();
+
+                GraphRequest graphRequest = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        try {
+                            displayUserInfo(object);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+                Bundle parameters = new Bundle();
+                parameters.putString("fields","first_name,last_name,email,id");
+                graphRequest.setParameters(parameters);
+                graphRequest.executeAsync();
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
 
         m_org_str=CreateAccount.getText().toString();
 
@@ -122,6 +185,31 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void displayUserInfo(JSONObject object) throws JSONException {
+        String first_name,last_name,email,id;
+
+        first_name = "";
+        last_name = "";
+        email = "";
+        id = "";
+
+        first_name = object.getString("first_name");
+        last_name = object.getString("last_name");
+        email = object.getString("email");
+        id = object.getString("id");
+
+        UserName.setText(first_name + " " + last_name);
+        UserEmail.setText("EMAIL :" + email);
+        UserID.setText("ID :" + id);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     //@OnClick(R.id.btn_login)

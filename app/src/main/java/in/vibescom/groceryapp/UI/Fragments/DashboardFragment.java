@@ -2,12 +2,16 @@ package in.vibescom.groceryapp.UI.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +22,8 @@ import in.vibescom.groceryapp.UI.Adapters.FeedsAdapter;
 public class DashboardFragment extends Fragment {
 
     Button Add2Card;
+    public final static int PAGES = 5;
+    public final static int FIRST_PAGE = 0  ;
 
     // ArrayList for person names
     ArrayList<String> personNames = new ArrayList<>
@@ -66,7 +72,11 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.dash_recyclerView);
+//        ViewPager = rootView.findViewById(R.id.viewpager);
+
+        ViewPager pager = (ViewPager) rootView.findViewById(R.id.view_pager);
+        pager.setAdapter(new MyPagerAdapter(getFragmentManager()));
 
         // set a GridLayoutManager with 1 number of columns , horizontal gravity and false value for reverseLayout to show the items
         // from start to end
@@ -80,4 +90,30 @@ public class DashboardFragment extends Fragment {
         recyclerView.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
         return rootView;
     }
+    private class MyPagerAdapter extends FragmentPagerAdapter {
+
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public android.support.v4.app.Fragment getItem(int pos) {
+            switch (pos) {
+                case 0:
+                    return FragmentViewPager.newInstance("ITEM-ONE", R.drawable.apple);
+                case 1:
+                    return FragmentViewPager.newInstance("ITEM-TWO", R.drawable.orange);
+                case 2:
+                    return FragmentViewPager.newInstance("ITEM-THREE", R.drawable.grapes);
+                default:
+                    return FragmentViewPager.newInstance("ITEM-ONE", R.drawable.apple);
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+    }
 }
+

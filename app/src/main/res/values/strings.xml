@@ -279,4 +279,12 @@
     </string-array>
 
     <string name="product_price"><strike>MRP :\u0020Rs\u002080</strike></string>
+    <string name="or_tv">---------------------OR---------------------</string>
+    <string name="facebook_app_id">211137626246661</string>
+    <string name="fb_login_protocol_scheme">fb211137626246661</string>
+
+    <string name="title_section1">ITEM-ONE</string>
+    <string name="title_section2">ITEM-TWO</string>
+    <string name="title_section3">ITEM-THREE</string>
+
 </resources>

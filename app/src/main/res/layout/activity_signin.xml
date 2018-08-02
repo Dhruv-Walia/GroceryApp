@@ -117,14 +117,15 @@
             android:padding="6dp"
             android:text="LOGIN"
             android:scaleX="1.8"
+
             android:fontFamily="serif"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_login"
             android:textStyle="bold" />
 
+
+
     </LinearLayout>
-
-
 
     <TextView
         android:id="@+id/tv_createAccount"
@@ -139,5 +140,64 @@
         android:textSize="@dimen/text_size_normal"
         android:layout_alignParentBottom="true"/>
 
+    <TextView
+        android:id="@+id/tv_or"
+        android:layout_below="@id/ll"
+        android:paddingTop="@dimen/margin_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="@string/or_tv"
+        android:textColor="#0f37e7"
+        android:textSize="@dimen/text_size_normal" />
+
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/fb_login_button"
+        android:layout_below="@id/tv_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center|fill"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_below="@id/fb_login_button"
+        android:paddingTop="@dimen/margin_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_below="@id/tv_name"
+        android:paddingTop="@dimen/margin_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_below="@id/tv_email"
+        android:paddingTop="@dimen/margin_20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size_normal" />
 
 </RelativeLayout>
