@@ -3,27 +3,37 @@ package in.vibescom.groceryapp.UI.Fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.lsjwzh.widget.recyclerviewpager.LoopRecyclerViewPager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Timer;
 
 import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Adapters.FeedsAdapter;
 
 public class DashboardFragment extends Fragment {
 
+    Timer timer;
+    private int currentPage = 0;
     Button Add2Card;
-    public final static int PAGES = 5;
-    public final static int FIRST_PAGE = 0  ;
+    ViewPager pager;
+    LinearLayout dotsLayout;
+    LoopRecyclerViewPager loopRecyclerViewPager;
 
     // ArrayList for person names
     ArrayList<String> personNames = new ArrayList<>
@@ -75,8 +85,18 @@ public class DashboardFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.dash_recyclerView);
 //        ViewPager = rootView.findViewById(R.id.viewpager);
 
-        ViewPager pager = (ViewPager) rootView.findViewById(R.id.view_pager);
-        pager.setAdapter(new MyPagerAdapter(getFragmentManager()));
+        pager = (ViewPager) rootView.findViewById(R.id.view_pager);
+        dotsLayout = rootView.findViewById(R.id.dots_layout);
+        //loopRecyclerViewPager = rootView.findViewById(R.id.loop_recycler_view_pager);
+        pager.setPageMargin(12);
+        MyPagerAdapter adapter = new MyPagerAdapter(getFragmentManager());
+        pager.setAdapter(adapter);
+
+// setLayoutManager like normal RecyclerView, you do not need to change any thing.
+        LinearLayoutManager layout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+
+        addBottomDots(0,adapter.getCount());
+
 
         // set a GridLayoutManager with 1 number of columns , horizontal gravity and false value for reverseLayout to show the items
         // from start to end
@@ -90,30 +110,58 @@ public class DashboardFragment extends Fragment {
         recyclerView.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
         return rootView;
     }
-    private class MyPagerAdapter extends FragmentPagerAdapter {
+
+    private void addBottomDots(int currentPage,int size) {
+        TextView[] dots = new TextView[size];
+        dotsLayout.removeAllViews();
+        for (int i = 0; i < dots.length; i++) {
+            dots[i] = new TextView(getContext());
+            dots[i].setText(Html.fromHtml("&#8226;"));
+            dots[i].setTextSize(35);
+            dots[i].setTextColor(getResources().getColor(R.color.inactiveState));
+            dotsLayout.addView(dots[i]);
+        }
+        if (dots.length > 0) {
+            dots[currentPage].setTextColor(getResources().getColor(R.color.theme_color));
+        }
+    }
+
+    private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
-        public android.support.v4.app.Fragment getItem(int pos) {
+        public Fragment getItem(int pos) {
+
             switch (pos) {
                 case 0:
-                    return FragmentViewPager.newInstance("ITEM-ONE", R.drawable.apple);
+                    return new ImageFragment(R.drawable.offer);
                 case 1:
-                    return FragmentViewPager.newInstance("ITEM-TWO", R.drawable.orange);
+                    return new ImageFragment(R.drawable.offer);
                 case 2:
-                    return FragmentViewPager.newInstance("ITEM-THREE", R.drawable.grapes);
+                    return new ImageFragment(R.drawable.offer);
+                case 3:
+                    return new ImageFragment(R.drawable.offer);
+                case 4:
+                    return new ImageFragment(R.drawable.apple);
+
                 default:
-                    return FragmentViewPager.newInstance("ITEM-ONE", R.drawable.apple);
+                    return new ImageFragment(R.drawable.offer);
             }
         }
 
         @Override
+        public float getPageWidth (int position) {
+            return 0.8f;
+        }
+
+        @Override
         public int getCount() {
-            return 3;
+            return 5;
         }
     }
+
 }
 
