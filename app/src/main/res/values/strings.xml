@@ -27,8 +27,11 @@
     <string name="offer_points">Offer Points</string>
     <string name="wallet_transactions">Wallet Transactions</string>
     <string name="points_demo">200 pt</string>
-    <string name="amount_demo">\u20B9  4000</string>
+    <string name="amount_mrp_demo">\u20B9350</string>
+    <string name="amount_mrp_off">30\% OFF</string>
+    <string name="amount_demo">\u20B9400</string>
     <string name="Rs">\u20B9  </string>
+    <string name="mrp">MRP:</string>
     <string name="wallet_see_all">See All</string>
     <string name="request_statement">Request Transaction Statement</string>
     <string name="wallet_terms">Wallet Terms </string>

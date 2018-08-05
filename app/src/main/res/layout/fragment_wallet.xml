@@ -17,7 +17,10 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         app:elevation="@dimen/zero">
 
-        <include layout="@layout/toolbar_profile"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -86,7 +89,7 @@
                                     android:text="@string/Rs" />
 
                                 <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                                    android:id="@+id/tv_wallet_amt"
+                                    android:id="@+id/tv_wallet_price"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="@color/black_color"
@@ -214,7 +217,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:textColor="@color/link_color"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textAllCaps="true"
                             android:textSize="@dimen/text_size_normal"
                             android:text="@string/wallet_see_all"
@@ -229,8 +232,7 @@
                         android:clipToPadding="false"
                         android:overScrollMode="never"
                         android:scrollbars="none"
-                        android:layout_marginTop="@dimen/margin_10dp"
-                        android:padding="@dimen/margin_5dp"/>
+                        android:layout_marginTop="@dimen/margin_10dp"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -282,6 +284,7 @@
                     android:layout_marginStart="@dimen/margin_15dp"
                     android:layout_marginEnd="@dimen/margin_15dp"
                     android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginBottom="@dimen/margin_10dp"
                     android:text="@string/wallet_info"/>
 
             </LinearLayout>

@@ -4,12 +4,12 @@
     android:shape="oval">
 
     <solid
-        android:color="@color/theme_color"/>
+        android:color="@color/red_button_color"/>
 
     <size
         android:width="@dimen/count"
         android:height="@dimen/count"/>
 
     <stroke android:width="0.5dp"
-        android:color="@color/theme_color"/>
+        android:color="@color/red_button_color"/>
 </shape>

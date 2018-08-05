@@ -51,8 +51,14 @@ dependencies {
      * A powerful image downloading and caching library for Android
      */
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    // Circular Image View
+    /**
+     * Circular Image View for Profile and UI
+     */
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    /**
+     * Card View Item modification for list items and UI
+     */
+    implementation 'com.android.support:cardview-v7:27.1.1'
     /**
      * Bind Android views and callbacks to fields and methods.
      */
@@ -67,7 +73,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.1'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-    implementation 'com.android.support:cardview-v7:27.1.1'
+
 
 
     //Loop Recycler View

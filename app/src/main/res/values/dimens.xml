@@ -42,6 +42,7 @@
     <dimen name="margin_25dp">25dp</dimen>
     <dimen name="margin_30dp">30dp</dimen>
     <dimen name="margin_35dp">35dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
     <dimen name="margin_3dp">3dp</dimen>
 
     <dimen name="profile_image_size">100dp</dimen>
@@ -118,13 +119,14 @@
     <dimen name="setting_text_size">16sp</dimen>
 
     <!--Feed module-->
-    <dimen name="carousel_height">280dp</dimen>
+    <dimen name="carousel_height">220dp</dimen>
     <dimen name="carousel_tab_height">35dp</dimen>
 
     <!--Product detail screen-->
     <dimen name="title_text_size">16sp</dimen>
     <dimen name="price_text_size">14sp</dimen>
     <dimen name="detail_icon_size">22dp</dimen>
+    <dimen name="add_btn_text_size">20sp</dimen>
     <dimen name="invitation_button_height">42dp</dimen>
 
 

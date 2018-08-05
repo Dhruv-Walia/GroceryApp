@@ -82,7 +82,6 @@
     <color name="permission_subtext_color">#929393</color>
 
     <!--MyConnection-->
-
     <color name="people_you_may_color">#36B79B</color>
     <color name="gmail_color">#C60000</color>
     <color name="facebook_color">#27487A</color>
@@ -120,13 +119,8 @@
     <color name="stuff_price_text">#646456</color>
     <color name="stuff_subtext">#6A6A6B</color>
 
-
     <!--product details-->
     <color name="product_name_text_color">#333333</color>
-
-
-    <!--Add New Skill Screen-->
-    <color name="actv_text_color">#A1A1A1</color>
 
     <!--Row My address screen-->
     <color name="row_address_color">#808081</color>

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.Activities.HomeActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/toolbar_universal"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarLayout"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/carousel_height"
+                    android:contentDescription="@string/COD"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/products_module_img"/>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager_images"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/carousel_height"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <ImageButton
+                    android:id="@+id/iv_previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding_10dp"
+                    android:src="@drawable/ic_arrow_left_grey"
+                    android:alpha="0.3"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/COD" />
+
+                <ImageButton
+                    android:id="@+id/iv_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding_10dp"
+                    android:src="@drawable/ic_arrow_right_grey"
+                    android:alpha="0.3"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/COD" />
+
+            </RelativeLayout>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_carousel"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/carousel_tab_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginBottom="@dimen/margin_5dp"
+                android:background="@color/window_background"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/theme_color"
+                app:tabIndicatorHeight="0.5dp"
+                app:tabMinWidth="@dimen/zero"
+                app:tabMode="fixed"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5dp">
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/item_extra_text_color"
+                    android:text="BB COMBO"/>
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Royal Whole Wheat Atta + Tata Salt + Popular Sugar"
+                    android:textColor="@color/black_color"
+                    android:textSize="@dimen/title_text_size" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/product_name_text_color"
+                    android:text="1 kg Packet / 500 gm Packet"/>
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_skui"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/item_extra_text_color"
+                    android:text="SKU No: 126466"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                        android:id="@+id/tv_mrp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/mrp"
+                        android:textColor="@color/item_extra_text_color"
+                        android:textSize="@dimen/price_text_size" />
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                        android:id="@+id/tv_cut_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_5dp"
+                        android:layout_toEndOf="@+id/tv_mrp"
+                        android:gravity="center_vertical"
+                        android:text="@string/amount_mrp_demo"
+                        android:textColor="@color/item_extra_text_color"
+                        android:textSize="@dimen/price_text_size" />
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_10dp"
+                        android:layout_toEndOf="@+id/tv_cut_price"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        android:text="@string/amount_demo"
+                        android:textColor="@color/black_color"
+                        android:textSize="@dimen/text_size_xxlarge" />
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                        android:id="@+id/tv_offer_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_10dp"
+                        android:layout_toEndOf="@+id/tv_price"
+                        android:gravity="center_vertical"
+                        android:text="@string/amount_mrp_off"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/price_text_size" />
+
+                    <ImageView
+                        android:id="@+id/iv_share"
+                        android:layout_width="@dimen/detail_icon_size"
+                        android:layout_height="@dimen/detail_icon_size"
+                        android:layout_margin="5dp"
+                        android:layout_toStartOf="@+id/iv_favorite"
+                        android:src="@drawable/ic_share_grey"
+                        android:contentDescription="@string/COD" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_favorite"
+                        android:layout_width="@dimen/detail_icon_size"
+                        android:layout_height="@dimen/detail_icon_size"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_favorite_border_grey"
+                        android:contentDescription="@string/COD" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_size"
+                    android:layout_margin="1dp"
+                    android:background="@color/divider_color" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8dp">
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                        android:id="@+id/tv_quantityType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quantity"
+                        android:textColor="@color/product_name_text_color"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                        android:id="@+id/tv_stockAvilableCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="In stock"
+                        android:textColor="@color/verified_color"
+                        android:textSize="@dimen/text_size_xlarge" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_40dp"
+                        android:background="@drawable/canvas_box_corner_grey"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_toLeftOf="@+id/btn_add_cart"
+                        android:weightSum="3">
+
+                        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:id="@+id/tv_quantityCounts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/product_name_text_color"
+                            android:textSize="@dimen/title_text_size" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_color_normal"/>
+
+                        <in.vibescom.groceryapp.UI.Views.SFDRButton
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:id="@+id/btn_decrease"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="-"
+                            android:textStyle="bold"
+                            android:background="@null"
+                            android:textSize="@dimen/add_btn_text_size"
+                            android:textColor="@color/color_out_of_stock" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_color_normal"/>
+
+
+                        <in.vibescom.groceryapp.UI.Views.SFDRButton
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:id="@+id/btn_increase"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="+"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/add_btn_text_size"
+                            android:background="@null"
+                            android:textColor="@color/color_out_of_stock" />
+
+                    </LinearLayout>
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRButton
+                        android:id="@+id/btn_add_cart"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:layout_width="160dp"
+                        android:layout_height="@dimen/margin_40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/canvas_red_rounded_corner_button"
+                        android:nextFocusRight="@id/product_name"
+                        android:text="Add to Cart"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/text_size_xlarge" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_size"
+                    android:layout_margin="1dp"
+                    android:background="@color/divider_color" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/canvas_box_corner_red"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginRight="70dp"
+                    android:layout_marginBottom="3dp"
+                    android:weightSum="2">
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRButton
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:id="@+id/btn_discription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Description"
+                        android:background="@drawable/canvas_left_rounded_corner_light_red_background"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_color_white" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/ButtonShopCategoryColor"/>
+
+
+                    <in.vibescom.groceryapp.UI.Views.SFDRButton
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:id="@+id/btn_specification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Specification"
+                        android:textAllCaps="false"
+                        android:background="@null"
+                        android:textColor="@color/ButtonShopCategoryColor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:orientation="vertical">
+
+                    <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                        android:id="@+id/tv_description_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/wallet_info"
+                        android:textColor="@color/main_text_color"
+                        android:textSize="@dimen/name_text_size"/>
+<!--
+                    <at.blogc.android.views.ExpandableTextView
+                        android:id="@+id/expandableTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="1dp"
+                        android:text=""
+                        android:textColor="@color/main_text_color" />
+
+                    <Button
+                        android:id="@+id/button_toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:background="@null"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingLeft="5dp"
+                        android:paddingBottom="@dimen/margin_5dp"
+                        android:text="@string/expand"
+                        android:textAllCaps="false"
+                        android:textColor="@color/link_color"/>
+-->
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

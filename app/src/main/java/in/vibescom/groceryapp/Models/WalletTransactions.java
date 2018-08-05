@@ -6,23 +6,23 @@ import in.vibescom.groceryapp.Constants.Constants;
 
 public class WalletTransactions implements Serializable,Constants {
 
-    private Double amount;
+    private String amount;
     private String heading;
     private String date;
     private Boolean transactionType;
 
-    public WalletTransactions(String head, Double amount, String date,Boolean type){
+    public WalletTransactions(String head, String amount, String date,Boolean type){
         this.heading = head;
         this.amount = amount;
         this.date = date;
         this.transactionType = type;
     }
 
-    public Double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

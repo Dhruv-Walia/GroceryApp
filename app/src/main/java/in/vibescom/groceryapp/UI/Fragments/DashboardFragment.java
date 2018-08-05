@@ -65,6 +65,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
         RecyclerView rvFeed = rootView.findViewById(R.id.rv__product_feeds);
         dotsLayout = rootView.findViewById(R.id.dots_layout);
         mRecyclerViewPager = rootView.findViewById(R.id.loop_recycler_view_pager);

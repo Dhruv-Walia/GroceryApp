@@ -1,6 +1,5 @@
 package in.vibescom.groceryapp.UI.Activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,14 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Fragments.DashboardFragment;
@@ -27,14 +25,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private Fragment currentFragment;
-    private Toolbar toolbar;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        title = toolbar.findViewById(R.id.tv_title);
 
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,6 +48,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             // on first time display view for first nav row_banner_item
             changeFragment(new DashboardFragment(),false,true,"Home");
             navigationView.setCheckedItem(R.id.nav_home);
+            title.setText(R.string.nav_home);
             drawer.setDrawerTitle(10,"Home");
         }
     }
@@ -64,17 +64,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.nav_home) {
             changeFragment(new DashboardFragment(),true,true,"Home");
-            toolbar.setTitle(R.string.nav_home);
+            title.setText(R.string.nav_home);
         } else if (id == R.id.nav_offers) {
 
         } else if (id == R.id.nav_account) {
             changeFragment(new ProfileFragment(),true,true,"Profile");
-            toolbar.setTitle(R.string.nav_account);
+            title.setText(R.string.nav_account);
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_wallet) {
             changeFragment(new WalletFragment(),true,true,"Wallet");
-            toolbar.setTitle(R.string.nav_wallet);
+            title.setText(R.string.nav_wallet);
         } else if (id == R.id.nav_cart) {
 
         } else if (id == R.id.nav_notification) {
@@ -112,6 +112,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 changeFragment(new DashboardFragment(),false,true,"Home");
                 navigationView.setCheckedItem(R.id.nav_home);
+                title.setText(R.string.nav_home);
             }
         }
     }
