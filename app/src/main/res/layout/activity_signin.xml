@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <in.vibescom.groceryapp.UI.Views.SFDLTextView
             android:id="@+id/login_tv"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             >
-            <EditText
+            <in.vibescom.groceryapp.UI.Views.SFDLEditText
                 android:id="@+id/et_emailid"
                 android:singleLine="true"
                 android:layout_width="fill_parent"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             >
-            <EditText
+            <in.vibescom.groceryapp.UI.Views.SFDLEditText
                 android:id="@+id/et_login_password"
                 android:layout_marginTop="20dp"
                 android:singleLine="true"
@@ -86,7 +86,7 @@
             android:paddingBottom="5dp"
             android:paddingTop="8dp" >
 
-            <CheckBox
+            <in.vibescom.groceryapp.UI.Views.SFDLCheckBox
                 android:id="@+id/ck_show_hide_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 android:textColor="#0f37e7"
                 android:textSize="@dimen/text_size_normal" />
 
-            <TextView
+            <in.vibescom.groceryapp.UI.Views.SFDLTextView
                 android:id="@+id/tv_forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,26 +108,24 @@
 
         </LinearLayout>
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:drawable="@drawable/custom_button"
             android:padding="6dp"
+            android:elevation="@dimen/margin_35dp"
             android:text="LOGIN"
             android:scaleX="1.8"
-
             android:fontFamily="serif"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_login"
             android:textStyle="bold" />
 
-
-
     </LinearLayout>
 
-    <TextView
+    <in.vibescom.groceryapp.UI.Views.SFDLTextView
         android:id="@+id/tv_createAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,6 +134,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="@string/new_user"
+        android:elevation="@dimen/margin_5dp"
         android:textColor="#000000"
         android:textSize="@dimen/text_size_normal"
         android:layout_alignParentBottom="true"/>

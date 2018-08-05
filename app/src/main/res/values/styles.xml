@@ -10,10 +10,10 @@
 
     <style name="AppTheme.NoAction" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <!--<item name="colorPrimary">@color/theme_color</item>-->
+        <!--<row_banner_item name="colorPrimary">@color/theme_color</row_banner_item>-->
         <item name="colorPrimaryDark">@color/theme_color</item>
         <item name="colorAccent">@color/theme_color</item>
-        <!--<item name="android:textColorSecondary">@color/window_background</item>-->
+        <!--<row_banner_item name="android:textColorSecondary">@color/window_background</row_banner_item>-->
     </style>
 
     <style name="AppTheme.NoActionBar">

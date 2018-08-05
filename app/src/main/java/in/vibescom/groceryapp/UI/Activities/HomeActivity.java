@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         if (savedInstanceState == null) {
-            // on first time display view for first nav item
+            // on first time display view for first nav row_banner_item
             changeFragment(new DashboardFragment(),false,true,"Home");
             navigationView.setCheckedItem(R.id.nav_home);
             drawer.setDrawerTitle(10,"Home");
@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Handle navigation view row_banner_item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_home) {
             changeFragment(new DashboardFragment(),true,true,"Home");

@@ -9,23 +9,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Fragments.DashboardFragment;
 
 
-public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder> {
+public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapter.MyViewHolder> {
 
     ArrayList<String> personNames;
     ArrayList<Integer> personImages;
     Button Add2Cart;
     DashboardFragment context;
 
-    public FeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages,
-                        Button Add2Cart) {
+    public ProductFeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages,
+                               Button Add2Cart) {
         this.context = dashboardfragment;
         this.personNames = personNames;
         this.personImages = personImages;
@@ -35,7 +33,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // infalte the item Layout
+        // infalte the row_banner_item Layout
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_feed_layout, parent, false);
 
         // set the view's size, margins, paddings and layout parameters
@@ -58,11 +56,11 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
             }
         });
 
-        // implement setOnClickListener event on item view.
+        // implement setOnClickListener event on row_banner_item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // open another activity on item click
+                // open another activity on row_banner_item click
                 /*Intent intent = new Intent(context, ZoomImageActivity.class);
                 intent.putExtra("image", personImages.get(position)); // put image data in Intent
                 context.startActivity(intent); // start Intent*/
@@ -78,7 +76,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        // init the item view's
+        // init the row_banner_item view's
         TextView name;
         //TextView desc;
         ImageView image;
@@ -90,7 +88,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            // get the reference of item view's
+            // get the reference of row_banner_item view's
             name = (TextView) itemView.findViewById(R.id.product_name);
             //desc = (TextView) itemView.findViewById(R.id.desc);
             image = (ImageView) itemView.findViewById(R.id.image);

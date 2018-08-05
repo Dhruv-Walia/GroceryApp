@@ -1,10 +1,9 @@
 package in.vibescom.groceryapp.UI.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,22 +17,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lsjwzh.widget.recyclerviewpager.LoopRecyclerViewPager;
+import com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Timer;
 
 import in.vibescom.groceryapp.R;
-import in.vibescom.groceryapp.UI.Adapters.FeedsAdapter;
+import in.vibescom.groceryapp.UI.Adapters.ProductFeedsAdapter;
+import in.vibescom.groceryapp.UI.Adapters.LayoutAdapter;
 
 public class DashboardFragment extends Fragment {
 
-    Timer timer;
-    private int currentPage = 0;
+    Context context;
     Button Add2Card;
-    ViewPager pager;
+    LayoutAdapter layoutAdapter;
     LinearLayout dotsLayout;
-    LoopRecyclerViewPager loopRecyclerViewPager;
+    LoopRecyclerViewPager mRecyclerViewPager;
 
     // ArrayList for person names
     ArrayList<String> personNames = new ArrayList<>
@@ -43,14 +42,7 @@ public class DashboardFragment extends Fragment {
                             "Person 4",
                             "Person 5",
                             "Person 6",
-                            "Person 7",
-                            "Person 8",
-                            "Person 9",
-                            "Person 10",
-                            "Person 11",
-                            "Person 12",
-                            "Person 13",
-                            "Person 14"));
+                            "Person 7"));
 
     ArrayList<Integer> personImages = new ArrayList<>
             (Arrays.asList( R.drawable.person1,
@@ -59,15 +51,7 @@ public class DashboardFragment extends Fragment {
                             R.drawable.person4,
                             R.drawable.person5,
                             R.drawable.person6,
-                            R.drawable.person7,
-
-                            R.drawable.person1,
-                            R.drawable.person2,
-                            R.drawable.person3,
-                            R.drawable.person4,
-                            R.drawable.person5,
-                            R.drawable.person6,
-                            R.drawable.person7));
+                            R.drawable.person7 ) );
 
 
     public DashboardFragment(){ }
@@ -76,38 +60,23 @@ public class DashboardFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.dash_recyclerView);
-//        ViewPager = rootView.findViewById(R.id.viewpager);
-
-        pager = (ViewPager) rootView.findViewById(R.id.view_pager);
+        RecyclerView rvFeed = rootView.findViewById(R.id.rv__product_feeds);
         dotsLayout = rootView.findViewById(R.id.dots_layout);
-        //loopRecyclerViewPager = rootView.findViewById(R.id.loop_recycler_view_pager);
-        pager.setPageMargin(12);
-        MyPagerAdapter adapter = new MyPagerAdapter(getFragmentManager());
-        pager.setAdapter(adapter);
+        mRecyclerViewPager = rootView.findViewById(R.id.loop_recycler_view_pager);
 
-// setLayoutManager like normal RecyclerView, you do not need to change any thing.
-        LinearLayoutManager layout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
-
-        addBottomDots(0,adapter.getCount());
-
-
+        initViewPager();
         // set a GridLayoutManager with 1 number of columns , horizontal gravity and false value for reverseLayout to show the items
         // from start to end
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),1);
-
-        recyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
-
-        //  call the constructor of FeedsAdapter to send the reference and data to Adapter
-        FeedsAdapter feedsAdapter = new FeedsAdapter(DashboardFragment.this,personNames,personImages,Add2Card);
-
-        recyclerView.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
+        rvFeed.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
+        //  call the constructor of ProductFeedsAdapter to send the reference and data to Adapter
+        ProductFeedsAdapter feedsAdapter = new ProductFeedsAdapter(DashboardFragment.this,personNames,personImages,Add2Card);
+        rvFeed.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
         return rootView;
     }
 
@@ -126,42 +95,52 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    private class MyPagerAdapter extends FragmentStatePagerAdapter {
+    protected void initViewPager() {
+        LinearLayoutManager layout = new LinearLayoutManager(this.getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        mRecyclerViewPager.setTriggerOffset(0.15f);
+        mRecyclerViewPager.setFlingFactor(0.25f);
+        mRecyclerViewPager.setLayoutManager(layout);
+        layoutAdapter = new LayoutAdapter(context, mRecyclerViewPager,personImages);
+        mRecyclerViewPager.setAdapter(layoutAdapter);
+        mRecyclerViewPager.setHasFixedSize(true);
+        mRecyclerViewPager.setLongClickable(true);
+        addBottomDots(0,personImages.size());
 
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
+        mRecyclerViewPager.addOnPageChangedListener((i, i1) -> addBottomDots(mRecyclerViewPager.getActualCurrentPosition(),personImages.size()));
 
-        @Override
-        public Fragment getItem(int pos) {
+        mRecyclerViewPager.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int scrollState) { }
 
-            switch (pos) {
-                case 0:
-                    return new ImageFragment(R.drawable.offer);
-                case 1:
-                    return new ImageFragment(R.drawable.offer);
-                case 2:
-                    return new ImageFragment(R.drawable.offer);
-                case 3:
-                    return new ImageFragment(R.drawable.offer);
-                case 4:
-                    return new ImageFragment(R.drawable.apple);
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int i, int pos) {
+//                mPositionText.setText("First: " + mRecyclerViewPager.getFirstVisiblePosition());
+                int childCount = mRecyclerViewPager.getChildCount();
+                int width = mRecyclerViewPager.getChildAt(0).getWidth();
+                int padding = (mRecyclerViewPager.getWidth() - width) / 2;
 
-                default:
-                    return new ImageFragment(R.drawable.offer);
+                for (int j = 0; j < childCount; j++) {
+                    View v = recyclerView.getChildAt(j);
+                    //往左 从 padding 到 -(v.getWidth()-padding) 的过程中，由大到小
+                    float rate = 0;
+                    if (v.getLeft() <= padding) {
+                        if (v.getLeft() >= padding - v.getWidth()) {
+                            rate = (padding - v.getLeft()) * 1f / v.getWidth();
+                        } else {
+                            rate = 1;
+                        }
+                        v.setScaleY(1 - rate * 0.1f);
+                    } else {
+
+                        if (v.getLeft() <= recyclerView.getWidth() - padding) {
+                            rate = (recyclerView.getWidth() - padding - v.getLeft()) * 1f / v.getWidth();
+                        }
+                        v.setScaleY(0.9f + rate * 0.1f);
+                    }
+                }
             }
-        }
+        });
 
-        @Override
-        public float getPageWidth (int position) {
-            return 0.8f;
-        }
-
-        @Override
-        public int getCount() {
-            return 5;
-        }
     }
-
 }
 

@@ -744,7 +744,7 @@ public class Utils implements Constants {
         String filePath = "";
         String wholeID = DocumentsContract.getDocumentId(uri);
 
-        // Split at colon, use second item in the array
+        // Split at colon, use second row_banner_item in the array
         String id = wholeID.split(":")[1];
 
         String[] column = { Media.DATA };

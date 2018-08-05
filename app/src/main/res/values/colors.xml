@@ -170,4 +170,7 @@
     <color name="dialogWelcomeToPeepsin">#DC1D40</color>
     <color name="dialogVersionUpdateColor">#F4B504</color>
 
+    <!-- view pager row_banner_item-->
+    <color name="item_pressed_color">#d1c9c9</color>
+    <color name="item_activated_color">#77CEEE</color>
 </resources>

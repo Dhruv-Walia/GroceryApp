@@ -1,9 +1,6 @@
 package in.vibescom.groceryapp.UI.Activities;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,8 +13,6 @@ import android.text.method.PasswordTransformationMethod;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,8 +22,6 @@ import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import in.vibescom.groceryapp.R;
-
-import static android.provider.ContactsContract.Intents.Insert.EMAIL;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -68,7 +61,7 @@ public class SignInActivity extends AppCompatActivity {
                 if( Email.getText().toString().length() == 0 )
                     Email.setError( "This field is required!" );
 
-                else if( Password.getText().toString().length() == 0 )
+                else if( Password.getText().toString().length() == 0 || Password.getText().toString().length() < 4 || Password.getText().toString().length() > 12)
                     Password.setError( "This field is required!" );
 
                 else{
