@@ -1,8 +1,35 @@
 <resources>
 
+    <style name="AppTheme.ColorWhite">
+        <item name="colorError">@color/orderSummaryTextBack</item>
+    </style>
+
+    <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/red_button_color</item>
+    </style>
+
+    <style name="textInputLayout"  parent="AppTheme.NoActionBar">
+        <item name="android:textColor">@color/text_color_white</item>
+        <item name="android:textSize">13sp</item>
+        <item name="colorControlNormal">#839191</item>
+
+        <item name="android:cursorVisible">true</item>
+        <item name="android:textColorHint">#839191</item>
+        //added attributes
+        <item name="android:textCursorDrawable">@drawable/canvas_white_color_cursor</item>
+        <item name="android:textColorHintInverse">#839191</item>
+        <item name="colorControlActivated">@color/text_color_white</item>
+        <item name="colorControlHighlight">@color/text_color_white</item>
+
+    </style>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:textColorHint">#839191</item>
+        <item name="colorControlNormal">@color/text_color_white</item>
+        <item name="colorControlActivated">@color/text_color_white</item>
+        <item name="colorControlHighlight">@color/text_color_white</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -88,5 +115,7 @@
         <item name="android:background">@null</item>
         <item name="android:src">@drawable/ic_arrow_back_white</item>
     </style>
+
+    
 
 </resources>

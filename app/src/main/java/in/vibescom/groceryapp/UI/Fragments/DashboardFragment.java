@@ -2,8 +2,10 @@ package in.vibescom.groceryapp.UI.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,14 +27,16 @@ import java.util.Arrays;
 import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Adapters.ProductFeedsAdapter;
 import in.vibescom.groceryapp.UI.Adapters.LayoutAdapter;
+import in.vibescom.groceryapp.UI.Views.SFDRButton;
 
 public class DashboardFragment extends Fragment {
 
     Context context;
-    Button Add2Card;
+    SFDRButton Add2Card;
     LayoutAdapter layoutAdapter;
     LinearLayout dotsLayout;
     LoopRecyclerViewPager mRecyclerViewPager;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     // ArrayList for person names
     ArrayList<String> personNames = new ArrayList<>
@@ -67,6 +71,7 @@ public class DashboardFragment extends Fragment {
         context = getActivity();
 
         RecyclerView rvFeed = rootView.findViewById(R.id.rv__product_feeds);
+
         dotsLayout = rootView.findViewById(R.id.dots_layout);
         mRecyclerViewPager = rootView.findViewById(R.id.loop_recycler_view_pager);
 

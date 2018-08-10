@@ -75,6 +75,8 @@
     <color name="item_name_text_color">#4D4C52</color>
     <color name="item_seller_text_color">#487EBE</color>
     <color name="item_extra_text_color">#6A6A6A</color>
+    <color name="color_show_item">#FFFDE7</color>
+    <color name="amber">#FFC107</color>
 
     <!--Permissions-->
     <color name="permission_text_color">#C07009</color>
@@ -167,4 +169,5 @@
     <!-- view pager row_banner_item-->
     <color name="item_pressed_color">#d1c9c9</color>
     <color name="item_activated_color">#77CEEE</color>
+    <color name="blue_color">#313680</color>
 </resources>

@@ -1,29 +1,32 @@
 package in.vibescom.groceryapp.UI.Adapters;
 
 import android.graphics.Color;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Fragments.DashboardFragment;
+import in.vibescom.groceryapp.UI.Views.SFDRButton;
 
 
 public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapter.MyViewHolder> {
 
     ArrayList<String> personNames;
     ArrayList<Integer> personImages;
-    Button Add2Cart;
+    SFDRButton Add2Cart;
     DashboardFragment context;
 
     public ProductFeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages,
-                               Button Add2Cart) {
+                               SFDRButton Add2Cart) {
         this.context = dashboardfragment;
         this.personNames = personNames;
         this.personImages = personImages;
@@ -48,13 +51,6 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
         holder.name.setText(personNames.get(position));
         //holder.desc.setText(personDesc.get(position));
         holder.image.setImageResource(personImages.get(position));
-
-        holder.Add2Cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                holder.Add2Cart.setBackgroundColor(Color.RED);
-            }
-        });
 
         // implement setOnClickListener event on row_banner_item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -82,8 +78,7 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
         ImageView image;
 
         //Button Add to cart
-        Button Add2Cart;
-
+        SFDRButton Add2Cart;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -93,7 +88,7 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
             //desc = (TextView) itemView.findViewById(R.id.desc);
             image = (ImageView) itemView.findViewById(R.id.image);
 
-            Add2Cart = (Button) itemView.findViewById(R.id.btn_card_add);
+            Add2Cart = (SFDRButton) itemView.findViewById(R.id.btn_card_add);
         }
     }
 }

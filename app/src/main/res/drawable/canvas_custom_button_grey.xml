@@ -14,12 +14,16 @@
                 android:width="3dp"
                 android:color="#fff" />
             <corners
-                android:radius="3dp" />
+                android:radius="5dp" />
+            <solid
+                android:color="#00e43e24"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"/>
             <padding
-                android:left="10dp"
-                android:top="10dp"
-                android:right="10dp"
-                android:bottom="10dp" />
+                android:left="15dp"
+                android:top="15dp"
+                android:right="15dp"
+                android:bottom="15dp" />
         </shape>
     </item>
 
@@ -29,6 +33,10 @@
                 android:endColor="#f58122"
                 android:startColor="#ed781f"
                 android:angle="270" />
+            <solid
+                android:color="#00e43e24"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"/>
             <stroke
                 android:width="3dp"
                 android:color="#b3a7a7" />

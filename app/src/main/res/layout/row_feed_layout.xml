@@ -5,16 +5,17 @@
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.v7.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardview"
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/custom_item_layout"
+        android:clickable="true"
         android:elevation="@dimen/padding_5dp"
+        android:foreground="?android:attr/selectableItemBackground"
         android:padding="5dp"
         android:paddingBottom="@dimen/padding_5dp"
         android:paddingLeft="@dimen/padding_5dp"
@@ -24,13 +25,11 @@
         app:cardElevation="@dimen/margin_10dp"
         app:cardMaxElevation="@dimen/margin_10dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground">
-
+        app:cardUseCompatPadding="true">
 
         <!--grid items for RecyclerView-->
         <RelativeLayout
+            android:id="@+id/card_rl_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -43,7 +42,6 @@
                 android:background="#a18f8f"
                 android:scaleType="fitXY"
                 android:src="@mipmap/ic_launcher" />
-
 
             <TextView
                 android:id="@+id/product_name"
@@ -65,7 +63,7 @@
                 android:textSize="@dimen/text_size_normal" />
 
             <TextView
-                android:id="@+id/product_wght"
+                android:id="@+id/product_weight"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/product_pck"
@@ -78,35 +76,104 @@
                 android:id="@+id/product_orig_price"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/product_wght"
+                android:layout_below="@+id/product_weight"
                 android:text="@string/product_price"
                 android:textColor="#847373"
                 android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/product_discount_price"
-                android:layout_width="160dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/product_orig_price"
                 android:text="RS 75"
                 android:textColor="#e10c21"
                 android:textSize="@dimen/text_size_amount" />
 
-            <Button
-                android:id="@+id/btn_card_add"
+            <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                android:id="@+id/tv_discounted_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/canvas_circle_blue"
+                android:text="6.25 %"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/product_discount_price"
+                android:layout_marginTop="195dp"/>
+
+            <LinearLayout
+                android:id="@+id/increase_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignBottom="@+id/product_weight"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/padding_10dp"
+                android:nextFocusRight="@id/product_name">
+
+                <in.vibescom.groceryapp.UI.Views.SFDRButton
+                    android:id="@+id/btn_increase_cart"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/btn_card_add"
+                    android:background="@drawable/canvas_circle_blue"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/text_size_xxlarge"
+                    android:textStyle="bold" />
+
+
+                <in.vibescom.groceryapp.UI.Views.SFDLEditText
+                    android:id="@+id/et_show_cart_item"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
+                    android:layout_toStartOf="@+id/btn_card_add"
+                    android:background="@drawable/custom_underline_tv"
+                    android:gravity="center"
+                    style="@style/MyEditTextStyle"
+                    android:textColor="@color/blue_color"
+                    android:textStyle="bold" />
+
+
+                <in.vibescom.groceryapp.UI.Views.SFDRButton
+                    android:id="@+id/btn_decrease_cart"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:background="@drawable/canvas_circle_blue"
+                    android:text="-"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/text_size_xxlarge"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <in.vibescom.groceryapp.UI.Views.SFDLButton
+                android:id="@+id/btn_cart_add"
                 android:layout_width="55dp"
                 android:layout_height="35dp"
-                android:layout_alignBottom="@+id/product_wght"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/my_feed_btn"
-                android:nextFocusRight="@id/product_name"
+                android:background="@drawable/canvas_feed_btn"
                 android:text="ADD"
-                android:textColor="#FFF"
-                android:textSize="15dp" />
-
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_below="@+id/increase_ll"
+                android:layout_marginHorizontal="260dp"
+                android:textColor="@color/red_button_color" />
 
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
+    <View
+        android:id="@+id/card_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:layout_below="@+id/card_view"
+        android:background="@color/divider_color" />
 
 </RelativeLayout>

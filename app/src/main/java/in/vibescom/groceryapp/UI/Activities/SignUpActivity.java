@@ -1,67 +1,92 @@
 package in.vibescom.groceryapp.UI.Activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import in.vibescom.groceryapp.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    Button existing_user_btn,Signup;
-    EditText Fullname, EmailId,MobileNumber,Location,Password,Confirm_Password;
+    Button signUp;
+    TextView existingUser,signUpLabel;
+    EditText fullName, emailId, mobileNumber, location, password, confirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        existing_user_btn= findViewById(R.id.btn_existing_user);
+        existingUser= findViewById(R.id.tv_existing_user);
 
-        Signup = findViewById(R.id.btn_signUp);
-        Fullname = findViewById(R.id.et_fullName);
-        EmailId = findViewById(R.id.et_userEmailId);
-        MobileNumber = findViewById(R.id.et_mobileNumber);
-        Location = findViewById(R.id.et_location);
-        Password = findViewById(R.id.et_password);
-        Confirm_Password = findViewById(R.id.et_confirmPassword);
+        signUp = findViewById(R.id.btn_signUp);
+        fullName = findViewById(R.id.et_fullName);
+        emailId = findViewById(R.id.et_userEmailId);
+        mobileNumber = findViewById(R.id.et_mobileNumber);
+        location = findViewById(R.id.et_location);
+        password = findViewById(R.id.et_password);
+        confirmPassword = findViewById(R.id.et_confirm_Password);
+        existingUser = findViewById(R.id.tv_existing_user);
+        signUpLabel = findViewById(R.id.sign_up_title);
 
-        Signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if( Fullname.getText().toString().length() == 0 )
-                    Fullname.setError( "This field is required!" );
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/deftone_stylus.ttf");
+        signUpLabel.setTypeface(typeface);
 
-                else if( Password.getText().toString().length() == 0 )
-                    Password.setError( "This field is required!" );
+        //org_str = existingUser.getText().toString();
 
-                else if( EmailId.getText().toString().length() == 0 )
-                    EmailId.setError( "This field is required!" );
+//        SpannableStringBuilder iBuilder = new SpannableStringBuilder(org_str);
 
-                else if( MobileNumber.getText().toString().length() == 0 )
-                    MobileNumber.setError( "This field is required!" );
+        /*iBuilder.setSpan(new RelativeSizeSpan(1.4f), 15,21, 0);
 
-                else if( Location.getText().toString().length() == 0 )
-                    Location.setError( "This field is required!" );
+        iBuilder.setSpan(
+                new ForegroundColorSpan(Color.WHITE),
+                org_str.indexOf("Already a user!"),
+                org_str.indexOf("Already a user!") + String.valueOf("Already a user!").length(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
 
-                else if( Confirm_Password.getText().toString().length() == 0 )
-                    Confirm_Password.setError( "This field is required!" );
+        iBuilder.setSpan(new StyleSpan(Typeface.BOLD), 0, 15,  Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        iBuilder.setSpan(new RelativeSizeSpan(0.8f), 0,15, 0);
+        iBuilder.setSpan(
+                new ForegroundColorSpan(Color.WHITE),
+                org_str.indexOf("LogIn"),
+                org_str.indexOf("LogIn") + String.valueOf("LogIn").length(),
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
 
-                else{
-                    Intent signup = new Intent(SignUpActivity.this,SignInActivity.class);
-                    startActivity(signup);
-                }
+        existingUser.setText(iBuilder);
+*/
+        signUp.setOnClickListener(view -> {
+            if( fullName.getText().toString().length() == 0 )
+                fullName.setError( "This field is required!" );
+
+            else if( password.getText().toString().length() == 0 )
+                password.setError( "This field is required!" );
+
+            else if( emailId.getText().toString().length() == 0 )
+                emailId.setError( "This field is required!" );
+
+            else if( mobileNumber.getText().toString().length() == 0 )
+                mobileNumber.setError( "This field is required!" );
+
+            else if( location.getText().toString().length() == 0 )
+                location.setError( "This field is required!" );
+
+            else if( confirmPassword.getText().toString().length() == 0 )
+                confirmPassword.setError( "This field is required!" );
+
+            else{
+                Intent signup = new Intent(SignUpActivity.this,SignInActivity.class);
+                startActivity(signup);
             }
         });
 
-        existing_user_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent a_i = new Intent(SignUpActivity.this,SignInActivity.class);
-                startActivity(a_i);
-            }
+        existingUser.setOnClickListener(view -> {
+            Intent a_i = new Intent(SignUpActivity.this,SignInActivity.class);
+            startActivity(a_i);
         });
 
     }

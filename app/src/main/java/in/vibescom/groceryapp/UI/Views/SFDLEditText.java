@@ -27,5 +27,8 @@ public class SFDLEditText extends android.support.v7.widget.AppCompatEditText {
         setTypeface(font);
     }
 
-
+    @Override
+    public void setCursorVisible(boolean visible) {
+        super.setCursorVisible(true);
+    }
 }

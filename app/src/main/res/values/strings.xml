@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">GroceryApp</string>
     <string name="COD">APP CONTENT INFO</string>
+    <string name="policy">NOTE: \u0020You agree with our User Agreement and Privacy Policy.</string>
 
-    <string name="new_user">Do not have account? SignUp</string>
+    <string name="new_user">No Account yet?<font size="10"></font><b>\u0020Create one</b></string>
+    <string name="sign_in">Already a user!<font size="10"></font><b>\u0020LogIn</b></string>
+    <string name="sign_up"><font size="10"><b>Every day you get our best</b></font></string>
     <string name="title_myprofile">Profile</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -294,5 +297,4 @@
     <string name="title_section1">ITEM-ONE</string>
     <string name="title_section2">ITEM-TWO</string>
     <string name="title_section3">ITEM-THREE</string>
-
 </resources>
