@@ -53,7 +53,6 @@ public class DashboardFragment extends Fragment {
                             R.drawable.person6,
                             R.drawable.person7 ) );
 
-
     public DashboardFragment(){ }
 
     @Override
@@ -65,6 +64,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        context = getActivity();
 
         RecyclerView rvFeed = rootView.findViewById(R.id.rv__product_feeds);
         dotsLayout = rootView.findViewById(R.id.dots_layout);
@@ -85,14 +85,14 @@ public class DashboardFragment extends Fragment {
         TextView[] dots = new TextView[size];
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
-            dots[i] = new TextView(getContext());
+            dots[i] = new TextView(context);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.inactiveState));
+            dots[i].setTextColor(context.getResources().getColor(R.color.inactiveState));
             dotsLayout.addView(dots[i]);
         }
         if (dots.length > 0) {
-            dots[currentPage].setTextColor(getResources().getColor(R.color.theme_color));
+            dots[currentPage].setTextColor(context.getResources().getColor(R.color.theme_color));
         }
     }
 

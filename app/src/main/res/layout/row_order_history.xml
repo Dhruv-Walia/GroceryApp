@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_view"
+    android:layout_marginBottom="@dimen/margin_5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0.0px"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    app:cardElevation="@dimen/margin_3dp"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_5dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/margin_5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:textStyle="bold"
+                    android:text="Order "
+                    android:textColor="@color/black_color"
+                    android:textSize="18sp" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_total_items"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_order"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="(Items : 19)"
+                    android:textColor="@color/text_color_regular"
+                    android:textSize="18sp" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_order_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/tv_total_items"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="Processed"
+                    android:textColor="@color/link_color"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/iv_order_status"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_process"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/margin_5dp"
+                    android:contentDescription="@string/COD"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="Order Id :"
+                    android:textColor="@color/text_color_regular"
+                    android:textSize="@dimen/text_size_regular" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:id="@+id/tv_order_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:paddingLeft="5dp"
+                    android:text="ODI1234KFBG2"
+                    android:textColor="@color/card_normal_text"
+                    android:textSize="@dimen/text_size_regular" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="Order Date :"
+                    android:textColor="@color/text_color_regular"
+                    android:textSize="@dimen/text_size_regular" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:id="@+id/tv_order_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:paddingLeft="5dp"
+                    android:text="July-04-2017"
+                    android:textColor="@color/card_normal_text"
+                    android:textSize="@dimen/text_size_regular" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:text="Amount Paid :"
+                    android:textColor="@color/text_color_regular"
+                    android:textSize="@dimen/text_size_regular" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:id="@+id/tv_amount_paid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:paddingLeft="5dp"
+                    android:text="Rs 1,000 "
+                    android:textColor="@color/card_normal_text"
+                    android:textSize="@dimen/text_size_regular" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:paddingLeft="5dp"
+                    android:text="through"
+                    android:textColor="@color/card_normal_text"
+                    android:textSize="@dimen/text_size_regular" />
+
+                <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                    android:id="@+id/tv_payment_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5dp"
+                    android:paddingLeft="5dp"
+                    android:text="COD"
+                    android:textColor="@color/card_normal_text"
+                    android:textSize="@dimen/text_size_regular" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:orientation="vertical">
+
+            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Info"
+                android:textStyle="bold"
+                android:textColor="@color/black_color"
+                android:textSize="18sp" />
+
+            <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                android:id="@+id/tv_cust_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:maxLines="2"
+                android:text="E 22, Udhyog Marg, Sector 8, Noida, Uttar Pradesh"
+                android:textColor="@color/card_normal_text"
+                android:textSize="@dimen/text_size_normal" />
+
+
+            <in.vibescom.groceryapp.UI.Views.SFDLTextView
+                android:id="@+id/tv_cust_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:text="(0120) 6563532"
+                android:textColor="@color/card_normal_text"
+                android:textSize="@dimen/text_size_regular" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

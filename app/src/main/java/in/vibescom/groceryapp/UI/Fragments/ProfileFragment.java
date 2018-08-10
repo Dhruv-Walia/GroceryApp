@@ -1,6 +1,7 @@
 package in.vibescom.groceryapp.UI.Fragments;
 
-import android.os.Build;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,14 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import in.vibescom.groceryapp.R;
+import in.vibescom.groceryapp.UI.Interfaces.MenuListener;
 
+@SuppressLint("ValidFragment")
 public class ProfileFragment extends Fragment {
 
     @BindView(R.id.iv_profile_image)
@@ -36,10 +38,13 @@ public class ProfileFragment extends Fragment {
     TextView tvPhone;
     @BindView(R.id.tv_location)
     TextView tvAddrees;
-    @BindView(R.id.tv_gender)
-    TextView tvGender;
     @BindView(R.id.tv_wallet_amt)
     TextView tvWalletAmount;
+    private MenuListener listener;
+
+    public ProfileFragment(MenuListener listener) {
+        this.listener = listener;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,11 +52,9 @@ public class ProfileFragment extends Fragment {
         setRetainInstance(true);
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,rootView);
-
         return rootView;
     }
 
@@ -62,17 +65,12 @@ public class ProfileFragment extends Fragment {
 
     @OnClick(R.id.view_my_wallet)
     void MyWallet(){
-
+        listener.onItemClicked(R.id.nav_wallet);
     }
 
     @OnClick(R.id.view_my_orders)
     void MyOrders(){
-
-    }
-
-    @OnClick(R.id.view_my_cart)
-    void MyCart(){
-
+        listener.onItemClicked(R.id.nav_orders);
     }
 
     @OnClick(R.id.view_my_addresses)

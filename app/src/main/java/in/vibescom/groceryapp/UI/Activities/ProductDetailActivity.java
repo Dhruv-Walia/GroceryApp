@@ -1,5 +1,6 @@
 package in.vibescom.groceryapp.UI.Activities;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,15 @@ public class ProductDetailActivity extends AppCompatActivity {
         tvCutPrice = findViewById(R.id.tv_cut_price);
         tvCutPrice.setPaintFlags(tvCutPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
+        ImageButton btnCart = findViewById(R.id.btn_cart);
+        btnCart.setOnClickListener(v -> {
+            Intent intent = new Intent(ProductDetailActivity.this,ShoppingBasketActivity.class);
+            startActivity(intent);
+        });
+    }
 
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
