@@ -31,13 +31,15 @@
     <string name="amount_mrp_off">30\% OFF</string>
     <string name="amount_demo">\u20B9400</string>
     <string name="Rs">\u20B9  </string>
-    <string name="mrp">MRP:</string>
+    <string name="mrp">MRP :</string>
     <string name="wallet_see_all">See All</string>
     <string name="request_statement">Request Transaction Statement</string>
     <string name="wallet_terms">Wallet Terms </string>
     <string name="wallet_info">The MilkGrocery Wallet is a pre-paid credit wallet that is associated with the account.
         Wallet allows you to pay the amount in a hassle free manner. You can shop multiple times without adding your card details every time you order yor groceries.\n\nAmount is automatically deducted from your "Wallet" at the time of checkout until you run out of cash.
         \n\nWallet also gets automatically credited when cash-back is issued,or return order credits etc.</string>
+
+    <string name="total_order_items">Items : </string>
 
     <string-array name="noida_sector_list">
         <item></item>
@@ -281,7 +283,10 @@
 
     </string-array>
 
+    <string name="product_strike_mrp"><strike>MRP :</strike></string>
+    <string name="product_strike_price"><strike>\u0020Rs\u002080</strike></string>
     <string name="product_price"><strike>MRP :\u0020Rs\u002080</strike></string>
+    <string name="product_weight">1Kg Packet</string>
     <string name="or_tv">---------------------OR---------------------</string>
     <string name="facebook_app_id">211137626246661</string>
     <string name="fb_login_protocol_scheme">fb211137626246661</string>

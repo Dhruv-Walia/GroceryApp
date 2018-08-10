@@ -27,6 +27,7 @@ public interface Constants {
     int SHARE_PRODUCT = 45;
     String CART_UPDATE = "cartupdate";
     String PROGRESS_UPDATE = "progress";
+    String FRAGMENT_STATE = "state";
 
     //API Base Key
     String kStatus = "status";

@@ -26,25 +26,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/window_dash_back"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/carousel_height"
-                    android:contentDescription="@string/COD"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/products_module_img"/>
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/view_pager_images"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/carousel_height"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 <ImageButton
                     android:id="@+id/iv_previous"
@@ -70,6 +58,23 @@
                     android:background="@color/transparent"
                     android:contentDescription="@string/COD" />
 
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager_images"
+                    android:layout_width="wrap_content"
+                    android:layout_toEndOf="@id/iv_previous"
+                    android:layout_toStartOf="@id/iv_next"
+                    android:layout_height="@dimen/carousel_height"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/carousel_height"
+                    android:contentDescription="@string/COD"
+                    android:scaleType="fitXY"
+                    android:layout_toEndOf="@id/iv_previous"
+                    android:layout_toStartOf="@id/iv_next"
+                    android:src="@drawable/products_module_img"/>
+
             </RelativeLayout>
 
             <android.support.design.widget.TabLayout
@@ -93,256 +98,288 @@
                 android:orientation="vertical"
                 android:padding="@dimen/padding_5dp">
 
-                <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                    android:id="@+id/tv_company_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:textSize="14sp"
-                    android:textColor="@color/item_extra_text_color"
-                    android:text="BB COMBO"/>
-
-                <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                    android:id="@+id/tv_product_name"
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_detail"
+                    android:layout_marginBottom="@dimen/margin_8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Royal Whole Wheat Atta + Tata Salt + Popular Sugar"
-                    android:textColor="@color/black_color"
-                    android:textSize="@dimen/title_text_size" />
-
-                <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                    android:id="@+id/tv_offer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:textSize="14sp"
-                    android:textColor="@color/product_name_text_color"
-                    android:text="1 kg Packet / 500 gm Packet"/>
-
-                <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                    android:id="@+id/tv_skui"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:maxLines="1"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:textSize="14sp"
-                    android:textColor="@color/item_extra_text_color"
-                    android:text="SKU No: 126466"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp">
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_mrp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:gravity="center_vertical"
-                        android:text="@string/mrp"
-                        android:textColor="@color/item_extra_text_color"
-                        android:textSize="@dimen/price_text_size" />
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_cut_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/margin_5dp"
-                        android:layout_toEndOf="@+id/tv_mrp"
-                        android:gravity="center_vertical"
-                        android:text="@string/amount_mrp_demo"
-                        android:textColor="@color/item_extra_text_color"
-                        android:textSize="@dimen/price_text_size" />
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/margin_10dp"
-                        android:layout_toEndOf="@+id/tv_cut_price"
-                        android:gravity="center_vertical"
-                        android:textStyle="bold"
-                        android:text="@string/amount_demo"
-                        android:textColor="@color/black_color"
-                        android:textSize="@dimen/text_size_xxlarge" />
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_offer_tag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/margin_10dp"
-                        android:layout_toEndOf="@+id/tv_price"
-                        android:gravity="center_vertical"
-                        android:text="@string/amount_mrp_off"
-                        android:textColor="@color/red"
-                        android:textSize="@dimen/price_text_size" />
-
-                    <ImageView
-                        android:id="@+id/iv_share"
-                        android:layout_width="@dimen/detail_icon_size"
-                        android:layout_height="@dimen/detail_icon_size"
-                        android:layout_margin="5dp"
-                        android:layout_toStartOf="@+id/iv_favorite"
-                        android:src="@drawable/ic_share_grey"
-                        android:contentDescription="@string/COD" />
-
-
-                    <ImageView
-                        android:id="@+id/iv_favorite"
-                        android:layout_width="@dimen/detail_icon_size"
-                        android:layout_height="@dimen/detail_icon_size"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/ic_favorite_border_grey"
-                        android:contentDescription="@string/COD" />
-
-
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_size"
-                    android:layout_margin="1dp"
-                    android:background="@color/divider_color" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_8dp">
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_quantityType"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Quantity"
-                        android:textColor="@color/product_name_text_color"
-                        android:textSize="@dimen/text_size_large" />
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_stockAvilableCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="In stock"
-                        android:textColor="@color/verified_color"
-                        android:textSize="@dimen/text_size_xlarge" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_15dp">
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    app:cardElevation="@dimen/margin_3dp"
+                    app:cardPreventCornerOverlap="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/margin_40dp"
-                        android:background="@drawable/canvas_box_corner_grey"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_toLeftOf="@+id/btn_add_cart"
-                        android:weightSum="3">
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_10dp"
+                        android:paddingStart="@dimen/margin_5dp"
+                        android:paddingEnd="@dimen/margin_5dp"
+                        android:orientation="vertical">
 
                         <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                            style="@style/Widget.AppCompat.Button.Borderless"
-                            android:id="@+id/tv_quantityCounts"
+                            android:id="@+id/tv_company_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textSize="14sp"
+                            android:textColor="@color/item_extra_text_color"
+                            android:text="BB COMBO"/>
+
+                        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                            android:id="@+id/tv_product_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="1"
-                            android:background="@null"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textColor="@color/product_name_text_color"
+                            android:text="Royal Whole Wheat Atta + Tata Salt + Popular Sugar"
+                            android:textColor="@color/black_color"
                             android:textSize="@dimen/title_text_size" />
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/text_color_normal"/>
+                        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                            android:id="@+id/tv_offer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textSize="14sp"
+                            android:textColor="@color/product_name_text_color"
+                            android:text="1 kg Packet / 500 gm Packet"/>
 
-                        <in.vibescom.groceryapp.UI.Views.SFDRButton
-                            style="@style/Widget.AppCompat.Button.Borderless"
-                            android:id="@+id/btn_decrease"
+                        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                            android:id="@+id/tv_skui"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textSize="14sp"
+                            android:textColor="@color/item_extra_text_color"
+                            android:text="SKU No: 126466"/>
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="-"
-                            android:textStyle="bold"
-                            android:background="@null"
-                            android:textSize="@dimen/add_btn_text_size"
-                            android:textColor="@color/color_out_of_stock" />
+                            android:gravity="center_vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp">
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/text_color_normal"/>
+                            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                android:id="@+id/tv_mrp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:gravity="center_vertical"
+                                android:text="@string/mrp"
+                                android:textColor="@color/item_extra_text_color"
+                                android:textSize="@dimen/price_text_size" />
+
+                            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                android:id="@+id/tv_cut_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/margin_5dp"
+                                android:layout_toEndOf="@+id/tv_mrp"
+                                android:gravity="center_vertical"
+                                android:text="@string/amount_mrp_demo"
+                                android:textColor="@color/item_extra_text_color"
+                                android:textSize="@dimen/price_text_size" />
+
+                            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                android:id="@+id/tv_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/margin_10dp"
+                                android:layout_toEndOf="@+id/tv_cut_price"
+                                android:gravity="center_vertical"
+                                android:textStyle="bold"
+                                android:text="@string/amount_demo"
+                                android:textColor="@color/black_color"
+                                android:textSize="@dimen/text_size_xxlarge" />
+
+                            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                android:id="@+id/tv_offer_tag"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/margin_10dp"
+                                android:layout_toEndOf="@+id/tv_price"
+                                android:gravity="center_vertical"
+                                android:text="@string/amount_mrp_off"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/price_text_size" />
+
+                            <ImageView
+                                android:id="@+id/iv_share"
+                                android:layout_width="@dimen/detail_icon_size"
+                                android:layout_height="@dimen/detail_icon_size"
+                                android:layout_margin="5dp"
+                                android:layout_toStartOf="@+id/iv_favorite"
+                                android:src="@drawable/ic_share_grey"
+                                android:contentDescription="@string/COD" />
 
 
-                        <in.vibescom.groceryapp.UI.Views.SFDRButton
-                            style="@style/Widget.AppCompat.Button.Borderless"
-                            android:id="@+id/btn_increase"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="+"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/add_btn_text_size"
-                            android:background="@null"
-                            android:textColor="@color/color_out_of_stock" />
+                            <ImageView
+                                android:id="@+id/iv_favorite"
+                                android:layout_width="@dimen/detail_icon_size"
+                                android:layout_height="@dimen/detail_icon_size"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/ic_favorite_border_grey"
+                                android:contentDescription="@string/COD" />
+
+
+                        </RelativeLayout>
+
 
                     </LinearLayout>
 
-                    <in.vibescom.groceryapp.UI.Views.SFDRButton
-                        android:id="@+id/btn_add_cart"
-                        style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:layout_width="160dp"
-                        android:layout_height="@dimen/margin_40dp"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"
-                        android:background="@drawable/canvas_red_rounded_corner_button"
-                        android:nextFocusRight="@id/product_name"
-                        android:text="Add to Cart"
-                        android:textColor="@color/text_color_white"
-                        android:textSize="@dimen/text_size_xlarge" />
+                </android.support.v7.widget.CardView>
 
-
-                </RelativeLayout>
-
-                <View
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_quantity"
+                    android:layout_marginBottom="@dimen/margin_5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_size"
-                    android:layout_margin="1dp"
-                    android:background="@color/divider_color" />
+                    android:layout_height="wrap_content"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    app:cardElevation="@dimen/margin_3dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/margin_5dp"
+                        android:paddingLeft="@dimen/margin_5dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8dp">
+
+                            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                android:id="@+id/tv_quantityType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Quantity"
+                                android:textColor="@color/product_name_text_color"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                android:id="@+id/tv_stockAvilableCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text="In stock"
+                                android:textColor="@color/verified_color"
+                                android:textSize="@dimen/text_size_xlarge" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_15dp">
+
+                            <LinearLayout
+                                android:layout_width="150dp"
+                                android:layout_height="@dimen/margin_30dp"
+                                android:background="@drawable/canvas_box_corner_grey"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginRight="20dp"
+                                android:weightSum="3">
+
+                                <in.vibescom.groceryapp.UI.Views.SFDRButton
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:id="@+id/btn_decrease"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="-"
+                                    android:textStyle="bold"
+                                    android:background="@null"
+                                    android:textSize="@dimen/add_btn_text_size"
+                                    android:textColor="@color/color_out_of_stock" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/text_color_normal"/>
+
+                                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:id="@+id/tv_quantityCounts"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="1"
+                                    android:background="@null"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/product_name_text_color"
+                                    android:textSize="@dimen/title_text_size" />
 
 
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/text_color_normal"/>
+
+
+                                <in.vibescom.groceryapp.UI.Views.SFDRButton
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:id="@+id/btn_increase"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="+"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/add_btn_text_size"
+                                    android:background="@null"
+                                    android:textColor="@color/color_out_of_stock" />
+
+                            </LinearLayout>
+
+                            <in.vibescom.groceryapp.UI.Views.SFDRButton
+                                android:id="@+id/btn_add_cart"
+                                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                                android:layout_width="150dp"
+                                android:layout_height="@dimen/margin_30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/canvas_red_rounded_corner_button"
+                                android:nextFocusRight="@id/product_name"
+                                android:text="Add to Cart"
+                                android:textColor="@color/text_color_white"
+                                android:textSize="@dimen/text_size_xlarge" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="@dimen/margin_35dp"
                     android:background="@drawable/canvas_box_corner_red"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/margin_10dp"
                     android:layout_marginLeft="70dp"
                     android:layout_marginRight="70dp"
-                    android:layout_marginBottom="3dp"
+                    android:layout_marginBottom="@dimen/margin_5dp"
                     android:weightSum="2">
 
                     <in.vibescom.groceryapp.UI.Views.SFDRButton
@@ -419,16 +456,9 @@
 
                 </LinearLayout>
 
-
             </LinearLayout>
 
-
-
-
         </LinearLayout>
-
-
-
 
     </android.support.v4.widget.NestedScrollView>
 

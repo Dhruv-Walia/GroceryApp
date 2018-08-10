@@ -25,10 +25,6 @@
             android:icon="@drawable/ic_account_wallet_red"
             android:title="Your Wallet" />
         <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_shopping_basket"
-            android:title="Your Cart" />
-        <item
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_notifications_amber"
             android:title="Notifications" />

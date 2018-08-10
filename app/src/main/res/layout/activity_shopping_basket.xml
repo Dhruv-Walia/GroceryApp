@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.Activities.HomeActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/toolbar_cart"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/csrt_data_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/window_dash_back"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/checkout_view"
+            android:padding="@dimen/margin_5dp"
+            android:clipToPadding="false" />
+
+        <RelativeLayout
+            android:id="@+id/checkout_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingStart="@dimen/margin_10dp"
+            android:paddingEnd="@dimen/margin_10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_out_of_stock">
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:text="Total : "/>
+
+            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                android:id="@+id/tv_total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/tv_total"
+                android:layout_centerVertical="true"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/text_size_xxlarge"
+                android:text="@string/amount_demo"/>
+
+
+            <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:textColor="@color/text_color_white"
+                android:textSize="25sp"
+                android:text="Checkout"
+                android:drawablePadding="@dimen/margin_8dp"
+                android:drawableEnd="@drawable/ic_arrow_forward_white"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/empty_cart_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/delivery_icon"
+            android:contentDescription="@string/COD"/>
+
+        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/text_color_lite"
+            android:textSize="@dimen/text_size_large"
+            android:text="There are no items in your basket."/>
+
+
+        <in.vibescom.groceryapp.UI.Views.SFDRTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_25dp"
+            android:gravity="center"
+            android:textColor="@color/black_color"
+            android:textSize="@dimen/text_size_xxlarge"
+            android:text="Enjoy Shopping Experience with Us!"/>
+
+        <in.vibescom.groceryapp.UI.Views.SFDRButton
+            android:id="@+id/btn_start_shopping"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:background="@color/color_out_of_stock"
+            android:nextFocusRight="@id/product_name"
+            android:text="Start Shopping"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/text_size_xxlarge" />
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -33,6 +33,7 @@
         <activity
             android:name=".UI.Activities.HomeActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
@@ -55,6 +56,13 @@
             android:theme="@style/AppTheme.NoAction"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".UI.Activities.ShoppingBasketActivity"
+            android:theme="@style/AppTheme.NoAction"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".UI.Activities.OrderDetailActivity"
+            android:theme="@style/AppTheme.NoAction"
+            android:screenOrientation="portrait"/>
 
     </application>
 

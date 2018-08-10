@@ -15,11 +15,6 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         app:elevation="@dimen/zero">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"/>
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -74,16 +69,18 @@
                     android:layout_marginStart="@dimen/drawable_image_margin"
                     android:layout_marginTop="2dp"
                     android:text="About"
+                    android:textSize="@dimen/text_size_xlarge"
                     android:textColor="@color/verified_color" />
 
                 <ImageView
                     android:id="@+id/iv_edit"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/margin_20dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginEnd="@dimen/margin_5dp"
                     android:contentDescription="@string/COD"
+                    android:tint="@color/verified_color"
                     android:src="@drawable/ic_edit" />
 
                 <View
@@ -243,7 +240,7 @@
 
                     </RelativeLayout>
 
-                    <RelativeLayout
+                    <!--<RelativeLayout
                         android:id="@+id/view_gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -270,8 +267,7 @@
                             android:textColor="@color/main_text_color"
                             android:textSize="@dimen/text_size_normal" />
 
-                    </RelativeLayout>
-
+                    </RelativeLayout>-->
 
                 </LinearLayout>
 
@@ -288,6 +284,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/drawable_image_margin"
                     android:text="Account"
+                    android:textSize="@dimen/text_size_xlarge"
                     android:textColor="@color/verified_color" />
 
                 <View
@@ -397,7 +394,7 @@
                     android:layout_height="@dimen/divider_size"
                     android:background="@color/divider_color" />
 
-
+<!--
                 <RelativeLayout
                     android:id="@+id/view_my_cart"
                     android:layout_width="match_parent"
@@ -439,7 +436,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/divider_size"
                     android:background="@color/divider_color" />
-
+-->
 
                 <RelativeLayout
                     android:id="@+id/view_my_addresses"
