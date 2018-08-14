@@ -286,6 +286,13 @@
 
     </string-array>
 
+    <string name="order_voucher_code">\"FREEDOM\"</string>
+    <string name="order_subtotal_price">\u20B9  1900.15</string>
+    <string name="order_delivery_charge">\u20B9  30</string>
+    <string name="order_offer_price">\u20B9  100.00</string>
+    <string name="order_total_amount">\u20B9  1800.00</string>
+    <string name="order_total_price">\u20B9  1900.00</string>
+
     <string name="product_strike_mrp"><strike>MRP :</strike></string>
     <string name="product_strike_price"><strike>\u0020Rs\u002080</strike></string>
     <string name="product_price"><strike>MRP :\u0020Rs\u002080</strike></string>
