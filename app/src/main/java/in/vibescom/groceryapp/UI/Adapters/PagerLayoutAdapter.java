@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.lsjwzh.widget.recyclerviewpager.LoopRecyclerViewPager;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import in.vibescom.groceryapp.R;
 
 
-public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleViewHolder> {
+public class PagerLayoutAdapter extends RecyclerView.Adapter<PagerLayoutAdapter.SimpleViewHolder> {
     public ImageView imageView;
     private RecyclerView mRecyclerView;
     private Context context;
@@ -31,7 +30,7 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
         }
     }
 
-    public LayoutAdapter(Context context, RecyclerView recyclerView, ArrayList<String> list) {
+    public PagerLayoutAdapter(Context context, RecyclerView recyclerView, ArrayList<String> list) {
         this.context = context;
         this.mItems = list;
         mRecyclerView = recyclerView;

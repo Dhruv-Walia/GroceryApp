@@ -21,15 +21,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import in.vibescom.groceryapp.R;
+import in.vibescom.groceryapp.UI.Adapters.PagerLayoutAdapter;
 import in.vibescom.groceryapp.UI.Adapters.ProductFeedsAdapter;
-import in.vibescom.groceryapp.UI.Adapters.LayoutAdapter;
+
 import in.vibescom.groceryapp.UI.Views.SFDRButton;
 
 public class DashboardFragment extends Fragment {
 
     Context context;
     SFDRButton Add2Card;
-    LayoutAdapter layoutAdapter;
+    PagerLayoutAdapter layoutAdapter;
     LinearLayout dotsLayout;
     LoopRecyclerViewPager mRecyclerViewPager;
 
@@ -110,7 +111,7 @@ public class DashboardFragment extends Fragment {
         mRecyclerViewPager.setTriggerOffset(0.15f);
         mRecyclerViewPager.setFlingFactor(0.25f);
         mRecyclerViewPager.setLayoutManager(layout);
-        layoutAdapter = new LayoutAdapter(context, mRecyclerViewPager, bannerImages);
+        layoutAdapter = new PagerLayoutAdapter(context, mRecyclerViewPager, bannerImages);
         mRecyclerViewPager.setAdapter(layoutAdapter);
         mRecyclerViewPager.setHasFixedSize(true);
         mRecyclerViewPager.setLongClickable(true);
