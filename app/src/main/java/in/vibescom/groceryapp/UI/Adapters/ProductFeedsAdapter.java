@@ -1,5 +1,6 @@
 package in.vibescom.groceryapp.UI.Adapters;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import in.vibescom.groceryapp.R;
@@ -21,11 +24,11 @@ import in.vibescom.groceryapp.UI.Views.SFDRButton;
 public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapter.MyViewHolder> {
 
     ArrayList<String> personNames;
-    ArrayList<Integer> personImages;
+    ArrayList<String> personImages;
     SFDRButton Add2Cart;
-    DashboardFragment context;
+    Context context;
 
-    public ProductFeedsAdapter(DashboardFragment dashboardfragment, ArrayList<String> personNames, ArrayList<Integer> personImages,
+    public ProductFeedsAdapter(Context dashboardfragment, ArrayList<String> personNames, ArrayList<String> personImages,
                                SFDRButton Add2Cart) {
         this.context = dashboardfragment;
         this.personNames = personNames;
@@ -50,7 +53,8 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
         // set the data in items
         holder.name.setText(personNames.get(position));
         //holder.desc.setText(personDesc.get(position));
-        holder.image.setImageResource(personImages.get(position));
+        Picasso.with(context).load(personImages.get(position)).placeholder(R.drawable.no_product_img).into(holder.image);
+        //holder.image.setImageResource(personImages.get(position));
 
         // implement setOnClickListener event on row_banner_item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {

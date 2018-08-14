@@ -64,7 +64,7 @@
             android:layout_gravity="center_vertical"
             app:backgroundTint="@color/text_color_white"
             app:passwordToggleContentDescription="@string/COD"
-            app:passwordToggleDrawable="@drawable/toggle_password"
+            app:passwordToggleDrawable="@drawable/canvas_toggle_password"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/text_color_white"
             android:padding="@dimen/margin_5dp"

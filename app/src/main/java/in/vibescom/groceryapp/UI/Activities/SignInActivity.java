@@ -18,9 +18,9 @@ import in.vibescom.groceryapp.R;
 public class SignInActivity extends AppCompatActivity {
 
 
-    TextView CreateAccount,ForgotPassword, title_signIn;
-    TextInputLayout textInputLayout_1, textInputLayout_2;
-    EditText Email,Password;
+    TextView mCreateAccount, mForgotPassword, mTitleSignIn;
+    TextInputLayout mTextInputLayout1, mTextInputLayout2;
+    EditText mEmail, mPassword;
     Button SignIn;
     String m_org_str ;
     Spannable Span_ssBuilder;
@@ -32,19 +32,19 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
         ButterKnife.bind(this);
-        CreateAccount = findViewById(R.id.tv_createAccount);
+        mCreateAccount = findViewById(R.id.tv_createAccount);
         SignIn = findViewById(R.id.btn_login);
-        Password = findViewById(R.id.et_login_password);
-        ForgotPassword = findViewById(R.id.tv_forgot_password);
-        Email = findViewById(R.id.et_email_id);
-        title_signIn = findViewById(R.id.tv_title_login);
-        textInputLayout_1 = findViewById(R.id.tILayout2);
+        mPassword = findViewById(R.id.et_login_password);
+        mForgotPassword = findViewById(R.id.tv_forgot_password);
+        mEmail = findViewById(R.id.et_email_id);
+        mTitleSignIn = findViewById(R.id.tv_title_login);
+        mTextInputLayout1 = findViewById(R.id.tILayout2);
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/deftone_stylus.ttf");
-        title_signIn.setTypeface(typeface);
+        mTitleSignIn.setTypeface(typeface);
 
 
-        textInputLayout_1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        mTextInputLayout1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus){
@@ -53,32 +53,32 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         // Show white background behind floating label
-                        textInputLayout_1.setHintTextAppearance(R.style.textInputLayout);
+                        mTextInputLayout1.setHintTextAppearance(R.style.textInputLayout);
                     }
                 }, 100000);
             }
             }
         });
 
-        //CreateAccount.setTranslationX(2f);
+        //mCreateAccount.setTranslationX(2f);
 
-        CreateAccount.setOnClickListener(view -> {
+        mCreateAccount.setOnClickListener(view -> {
             Intent cre_i = new Intent(SignInActivity.this,SignUpActivity.class);
             startActivity(cre_i);
         });
 
-        Password.setOnTouchListener((v, event) -> {
-            ForgotPassword.setVisibility(View.VISIBLE);
+        mPassword.setOnTouchListener((v, event) -> {
+            mForgotPassword.setVisibility(View.VISIBLE);
             return false;
         });
 
 
         SignIn.setOnClickListener(view -> {
-            if( Email.getText().toString().length() == 0) {
-                Email.setError("This field is required!");
+            if( mEmail.getText().toString().length() == 0) {
+                mEmail.setError("This field is required!");
                                                           }
-            else if( Password.getText().toString().length() == 0)
-            { textInputLayout_1.setError( "This field is required!" );
+            else if( mPassword.getText().toString().length() == 0)
+            { mTextInputLayout1.setError( "This field is required!" );
 
             }
 
@@ -88,7 +88,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        ForgotPassword.setOnClickListener(view -> {
+        mForgotPassword.setOnClickListener(view -> {
             Intent for_i = new Intent(SignInActivity.this,ForgotPasswordActivity.class);
             startActivity(for_i);
         });

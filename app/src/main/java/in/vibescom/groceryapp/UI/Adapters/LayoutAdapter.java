@@ -8,15 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.lsjwzh.widget.recyclerviewpager.LoopRecyclerViewPager;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import in.vibescom.groceryapp.R;
+
 
 public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleViewHolder> {
     public ImageView imageView;
     private RecyclerView mRecyclerView;
     private Context context;
-    private ArrayList<Integer> mItems ;
+    private ArrayList<String> mItems ;
 
     public static class SimpleViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
@@ -27,14 +31,14 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
         }
     }
 
-    public LayoutAdapter(Context context, RecyclerView recyclerView,ArrayList<Integer> list) {
+    public LayoutAdapter(Context context, RecyclerView recyclerView, ArrayList<String> list) {
         this.context = context;
         this.mItems = list;
         mRecyclerView = recyclerView;
     }
 
 
-    public void addItem(Integer item) {
+    public void addItem(String item) {
         mItems.add(item);
         notifyDataSetChanged();
     }
@@ -53,13 +57,13 @@ public class LayoutAdapter extends RecyclerView.Adapter<LayoutAdapter.SimpleView
 
     @Override
     public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
-        holder.imageView.setImageResource(mItems.get(position));
+
+        Picasso.with(context).load(mItems.get(position)).placeholder(R.drawable.test_product_img).into(holder.imageView);
+        //holder.imageView.setImageResource(mItems.indexOf(position));
 
         View itemView = holder.itemView;
         itemView.setOnClickListener(v -> {
-
         });
-        final int itemId = mItems.get(position);
     }
 
     @Override

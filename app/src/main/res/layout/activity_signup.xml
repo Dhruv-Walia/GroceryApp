@@ -150,7 +150,7 @@
             app:backgroundTint="@color/text_color_white"
             android:padding="@dimen/margin_5dp"
             app:hintTextAppearance="@style/textInputLayout"
-            app:passwordToggleDrawable="@drawable/toggle_password"
+            app:passwordToggleDrawable="@drawable/canvas_toggle_password"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/text_color_white"
             android:textColorHint="#f4d1d1">
@@ -183,7 +183,7 @@
             android:padding="@dimen/margin_5dp"
             app:hintTextAppearance="@style/textInputLayout"
             android:textColorHint="#f4d1d1"
-            app:passwordToggleDrawable="@drawable/toggle_password"
+            app:passwordToggleDrawable="@drawable/canvas_toggle_password"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/text_color_white">
 
