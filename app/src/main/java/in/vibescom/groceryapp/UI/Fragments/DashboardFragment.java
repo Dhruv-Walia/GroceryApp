@@ -33,16 +33,17 @@ public class DashboardFragment extends Fragment {
     PagerLayoutAdapter layoutAdapter;
     LinearLayout dotsLayout;
     LoopRecyclerViewPager mRecyclerViewPager;
+    LinearLayout feeds_linearLayout;
 
     // ArrayList for person names
     ArrayList<String> productNames = new ArrayList<>
             (Arrays.asList( "Product 1",
-                    "Product 2",
-                    "Product 3",
-                    "Product 4",
-                    "Product 5",
-                    "Product 6",
-                    "Product 7"));
+                            "Product 2",
+                            "Product 3",
+                            "Product 4",
+                            "Product 5",
+                            "Product 6",
+                            "Product 7"));
 
     ArrayList<String> productImages = new ArrayList<>
             (Arrays.asList("https://images.yourstory.com/2016/08/125-fall-in-love.png",
@@ -86,7 +87,7 @@ public class DashboardFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),1);
         rvFeed.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         //  call the constructor of ProductFeedsAdapter to send the reference and data to Adapter
-        ProductFeedsAdapter feedsAdapter = new ProductFeedsAdapter(getActivity(), productNames, productImages,Add2Card);
+        ProductFeedsAdapter feedsAdapter = new ProductFeedsAdapter(getActivity(), productNames, productImages,Add2Card,feeds_linearLayout);
         rvFeed.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
         return rootView;
     }

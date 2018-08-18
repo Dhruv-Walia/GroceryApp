@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
 
@@ -20,6 +21,7 @@ public class PagerLayoutAdapter extends RecyclerView.Adapter<PagerLayoutAdapter.
     private RecyclerView mRecyclerView;
     private Context context;
     private ArrayList<String> mItems ;
+    private LinearLayout feed_linearLayout;
 
     public static class SimpleViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;

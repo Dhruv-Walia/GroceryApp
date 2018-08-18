@@ -6,15 +6,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import in.vibescom.groceryapp.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    Spinner spinner_sector,spinner_apartment;
     Button signUp;
     TextView existingUser,signUpLabel;
-    EditText fullName, emailId, mobileNumber, location, password, confirmPassword;
+    EditText fullName, emailId, mobileNumber, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +24,14 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         existingUser= findViewById(R.id.tv_existing_user);
 
+        spinner_sector = findViewById(R.id.spin_sector);
+        spinner_apartment = findViewById(R.id.spin_apartment);
         signUp = findViewById(R.id.btn_signUp);
         fullName = findViewById(R.id.et_fullName);
         emailId = findViewById(R.id.et_userEmailId);
         mobileNumber = findViewById(R.id.et_mobileNumber);
-        location = findViewById(R.id.et_location);
         password = findViewById(R.id.et_password);
-        confirmPassword = findViewById(R.id.et_confirm_Password);
+
         existingUser = findViewById(R.id.tv_existing_user);
         signUpLabel = findViewById(R.id.sign_up_title);
 
@@ -71,12 +74,6 @@ public class SignUpActivity extends AppCompatActivity {
 
             else if( mobileNumber.getText().toString().length() == 0 )
                 mobileNumber.setError( "This field is required!" );
-
-            else if( location.getText().toString().length() == 0 )
-                location.setError( "This field is required!" );
-
-            else if( confirmPassword.getText().toString().length() == 0 )
-                confirmPassword.setError( "This field is required!" );
 
             else{
                 Intent signup = new Intent(SignUpActivity.this,SignInActivity.class);

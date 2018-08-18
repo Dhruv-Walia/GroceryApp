@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -27,13 +28,15 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
     ArrayList<String> personImages;
     SFDRButton Add2Cart;
     Context context;
+    LinearLayout feeds_linearLayout;
 
     public ProductFeedsAdapter(Context dashboardfragment, ArrayList<String> personNames, ArrayList<String> personImages,
-                               SFDRButton Add2Cart) {
+                               SFDRButton Add2Cart,LinearLayout feeds_linearLayout) {
         this.context = dashboardfragment;
         this.personNames = personNames;
         this.personImages = personImages;
         this.Add2Cart = Add2Cart;
+        this.feeds_linearLayout = feeds_linearLayout;
 
     }
 
@@ -56,6 +59,12 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
         Picasso.with(context).load(personImages.get(position)).placeholder(R.drawable.no_product_img).into(holder.image);
         //holder.image.setImageResource(personImages.get(position));
 
+        holder.Add2Cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.feeds_linearLayout.setVisibility(View.VISIBLE);
+            }
+        });
         // implement setOnClickListener event on row_banner_item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +89,7 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
         TextView name;
         //TextView desc;
         ImageView image;
+        LinearLayout feeds_linearLayout;
 
         //Button Add to cart
         SFDRButton Add2Cart;
@@ -92,6 +102,7 @@ public class ProductFeedsAdapter extends RecyclerView.Adapter<ProductFeedsAdapte
             //desc = (TextView) itemView.findViewById(R.id.desc);
             image = (ImageView) itemView.findViewById(R.id.image);
 
+            feeds_linearLayout = itemView.findViewById(R.id.cart_increase_ll);
             Add2Cart = (SFDRButton) itemView.findViewById(R.id.btn_card_add);
         }
     }

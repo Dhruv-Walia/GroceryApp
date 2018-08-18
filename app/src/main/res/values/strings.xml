@@ -5,7 +5,7 @@
 
     <string name="new_user">No Account yet?<font size="10"></font><b>\u0020Create one</b></string>
     <string name="sign_in">Already a user!<font size="10"></font><b>\u0020LogIn</b></string>
-    <string name="sign_up"><font size="10"><b>Every day you get our best</b></font></string>
+    <string name="sign_up">Every day you get the best deal</string>
     <string name="title_myprofile">Profile</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -45,7 +45,7 @@
     <string name="total_order_items">Items : </string>
 
     <string-array name="noida_sector_list">
-        <item></item>
+        <item>Select your Sector</item>
         <item>Chhajarsi Colony</item>
         <item>Dadri Road</item>
         <item name="Garhi Samastpur">Garhi Samastpur</item>
@@ -255,7 +255,7 @@
 
 
     <string-array name="apartment">
-        <item></item>
+        <item>Select your Apartment</item>
         <item name="abcd">abcd</item>
         <item name="efgh">efgh</item>
         <item name="ijkl">ijkl</item>

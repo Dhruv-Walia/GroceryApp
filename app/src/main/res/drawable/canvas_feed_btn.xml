@@ -5,9 +5,9 @@
     <solid android:color="#FFFDE7"/>
     <corners android:radius="10dp"/>
     <stroke
-        android:drawable="@color/red_button_color"
+        android:drawable="@color/item_extra_text_color"
         android:width="1dp"
-        android:color="@color/red_button_color" >
+        android:color="@color/item_extra_text_color" >
     </stroke>
 
 </shape>

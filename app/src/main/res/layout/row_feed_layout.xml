@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -16,14 +15,9 @@
         android:clickable="true"
         android:elevation="@dimen/padding_5dp"
         android:foreground="?android:attr/selectableItemBackground"
-        android:padding="5dp"
-        android:paddingBottom="@dimen/padding_5dp"
-        android:paddingLeft="@dimen/padding_5dp"
-        android:paddingRight="@dimen/padding_5dp"
-        android:paddingTop="@dimen/padding_5dp"
         app:cardCornerRadius="@dimen/padding_5dp"
-        app:cardElevation="@dimen/margin_10dp"
-        app:cardMaxElevation="@dimen/margin_10dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
 
@@ -48,9 +42,12 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image"
-                android:text="Product Name :"
-                android:textColor="#000"
-                android:textSize="@dimen/text_size_normal" />
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="BB COMBO"
+                android:textColor="@color/item_extra_text_color"
+                android:textSize="14sp" />
 
 
             <TextView
@@ -60,16 +57,19 @@
                 android:layout_below="@+id/product_name"
                 android:text="Packaged Type :"
                 android:textColor="#000"
-                android:textSize="@dimen/text_size_normal" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/product_weight"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/product_pck"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:text="Product Weight :"
-                android:textColor="#000"
-                android:textSize="@dimen/text_size_normal" />
+                android:textColor="@color/product_name_text_color"
+                android:textSize="14sp" />
 
 
             <TextView
@@ -79,7 +79,7 @@
                 android:layout_below="@+id/product_weight"
                 android:text="@string/product_price"
                 android:textColor="#847373"
-                android:textSize="12dp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/product_discount_price"
@@ -92,96 +92,83 @@
 
             <in.vibescom.groceryapp.UI.Views.SFDLTextView
                 android:id="@+id/tv_discounted_tag"
-                android:layout_width="110dp"
-                android:layout_height="@dimen/margin_20dp"
-                android:background="@null"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/canvas_circle_blue"
                 android:gravity="center"
                 android:text="6.25% OFF"
-                android:textColor="@color/red_button_color"
+                android:textColor="@color/text_color_white"
                 android:textSize="@dimen/margin_15dp"
                 android:textStyle="bold" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/product_pck"
-                android:layout_alignEnd="@+id/image">
+            <LinearLayout
+                android:id="@+id/cart_increase_ll"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/margin_30dp"
+                android:layout_alignEnd="@+id/image"
+                android:layout_below="@+id/product_name"
+                android:background="@drawable/canvas_box_corner_grey"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                android:weightSum="3">
 
-                <LinearLayout
-                    android:layout_width="150dp"
-                    android:layout_height="@dimen/margin_30dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/canvas_box_corner_grey"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                <in.vibescom.groceryapp.UI.Views.SFDRButton
+                    android:id="@+id/btn_decrease"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="-"
+                    android:textColor="@color/color_out_of_stock"
+                    android:textSize="@dimen/add_btn_text_size"
+                    android:textStyle="bold" />
 
-                    <in.vibescom.groceryapp.UI.Views.SFDRButton
-                        android:id="@+id/btn_decrease"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:text="-"
-                        android:textColor="@color/color_out_of_stock"
-                        android:textSize="@dimen/add_btn_text_size"
-                        android:textStyle="bold" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_color_normal" />
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/text_color_normal" />
+                <in.vibescom.groceryapp.UI.Views.SFDRTextView
+                    android:id="@+id/tv_quantityCounts"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/product_name_text_color"
+                    android:textSize="@dimen/title_text_size" />
 
-                    <in.vibescom.groceryapp.UI.Views.SFDRTextView
-                        android:id="@+id/tv_quantityCounts"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:gravity="center"
-                        android:text="1"
-                        android:textColor="@color/product_name_text_color"
-                        android:textSize="@dimen/title_text_size" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_color_normal" />
 
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/text_color_normal" />
-
-
-                    <in.vibescom.groceryapp.UI.Views.SFDRButton
-                        android:id="@+id/btn_increase"
-                        style="@style/Widget.AppCompat.Button.Borderless"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:text="+"
-                        android:textColor="@color/color_out_of_stock"
-                        android:textSize="@dimen/add_btn_text_size"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-
-            </RelativeLayout>
+                <in.vibescom.groceryapp.UI.Views.SFDRButton
+                    android:id="@+id/btn_increase"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:text="+"
+                    android:textColor="@color/color_out_of_stock"
+                    android:textSize="@dimen/add_btn_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <in.vibescom.groceryapp.UI.Views.SFDRButton
                 android:id="@+id/btn_card_add"
                 android:layout_width="55dp"
                 android:layout_height="35dp"
-                android:layout_alignBaseline="@+id/product_orig_price"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="63dp"
+                android:layout_below="@+id/product_weight"
+                android:layout_marginEnd="47dp"
                 android:background="@drawable/canvas_feed_btn"
-                android:text="ADD"
-                android:textColor="@color/red_button_color" />
-
+                android:text="ADD" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
@@ -189,7 +176,7 @@
     <View
         android:id="@+id/card_divider"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/divider_size"
+        android:layout_height="3dp"
         android:layout_below="@+id/card_view"
         android:background="@color/divider_color" />
 
