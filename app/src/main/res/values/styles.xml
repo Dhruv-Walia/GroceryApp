@@ -1,5 +1,13 @@
 <resources>
 
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+
+    </style>
+
     <style name="AppTheme.ColorWhite">
         <item name="colorError">@color/orderSummaryTextBack</item>
     </style>

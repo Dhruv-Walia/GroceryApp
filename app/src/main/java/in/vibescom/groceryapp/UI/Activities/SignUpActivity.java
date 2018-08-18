@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -13,7 +14,7 @@ import in.vibescom.groceryapp.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    Spinner spinner_sector,spinner_apartment;
+    Spinner mSpinnerSector, mSpinnerApartment;
     Button signUp;
     TextView existingUser,signUpLabel;
     EditText fullName, emailId, mobileNumber, password;
@@ -24,8 +25,8 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         existingUser= findViewById(R.id.tv_existing_user);
 
-        spinner_sector = findViewById(R.id.spin_sector);
-        spinner_apartment = findViewById(R.id.spin_apartment);
+        mSpinnerSector = findViewById(R.id.spinner_sector);
+        mSpinnerApartment = findViewById(R.id.spinner_apartment);
         signUp = findViewById(R.id.btn_signUp);
         fullName = findViewById(R.id.et_fullName);
         emailId = findViewById(R.id.et_userEmailId);
@@ -34,6 +35,15 @@ public class SignUpActivity extends AppCompatActivity {
 
         existingUser = findViewById(R.id.tv_existing_user);
         signUpLabel = findViewById(R.id.sign_up_title);
+//
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.noida_sector_list, R.layout.canvas_custom_spinner);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//        mSpinnerSector.setAdapter(adapter);
+//
+//        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.apartment, R.layout.canvas_custom_spinner);
+//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//        mSpinnerApartment.setAdapter(adapter2);
+
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/deftone_stylus.ttf");
         signUpLabel.setTypeface(typeface);

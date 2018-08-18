@@ -5,7 +5,7 @@
 
     <string name="new_user">No Account yet?<font size="10"></font><b>\u0020Create one</b></string>
     <string name="sign_in">Already a user!<font size="10"></font><b>\u0020LogIn</b></string>
-    <string name="sign_up">Every day you get the best deal</string>
+    <string name="sign_up">Every day get the best deal</string>
     <string name="title_myprofile">Profile</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
