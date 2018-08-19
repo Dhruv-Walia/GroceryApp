@@ -35,14 +35,14 @@ public class SignUpActivity extends AppCompatActivity {
 
         existingUser = findViewById(R.id.tv_existing_user);
         signUpLabel = findViewById(R.id.sign_up_title);
-//
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.noida_sector_list, R.layout.canvas_custom_spinner);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-//        mSpinnerSector.setAdapter(adapter);
-//
-//        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.apartment, R.layout.canvas_custom_spinner);
-//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
-//        mSpinnerApartment.setAdapter(adapter2);
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.noida_sector_list, R.layout.canvas_custom_spinner);
+        adapter.setDropDownViewResource(R.layout.canvas_checked_spinner);
+        mSpinnerSector.setAdapter(adapter);
+
+        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.apartment, R.layout.canvas_custom_spinner);
+        adapter2.setDropDownViewResource(R.layout.canvas_checked_spinner);
+        mSpinnerApartment.setAdapter(adapter2);
 
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/deftone_stylus.ttf");

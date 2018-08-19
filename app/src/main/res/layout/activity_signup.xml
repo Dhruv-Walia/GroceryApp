@@ -88,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:padding="5dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
             app:hintTextAppearance="@style/textInputLayout"
             android:textColorHint="#f4d1d1">
 
@@ -114,26 +115,32 @@
 
         <Spinner
             android:id="@+id/spinner_sector"
-            style="@style/spinnerItemStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/noida_sector_list"/>
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:paddingStart="@dimen/margin_15dp"/>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="@dimen/margin_25dp"
             android:background="@drawable/custom_underline_tv"/>
 
         <Spinner
             android:id="@+id/spinner_apartment"
-            style="@style/spinnerItemStyle"
+            android:paddingStart="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/apartment"/>
+            android:layout_height="wrap_content"/>
 
-        <TextView
+        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/custom_underline_tv"/>
 
         <android.support.design.widget.TextInputLayout
