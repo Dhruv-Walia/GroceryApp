@@ -24,6 +24,7 @@ import in.vibescom.groceryapp.R;
 import in.vibescom.groceryapp.UI.Adapters.PagerLayoutAdapter;
 import in.vibescom.groceryapp.UI.Adapters.ProductFeedsAdapter;
 
+import in.vibescom.groceryapp.UI.Helpers.DividerItemRecyclerDecoration;
 import in.vibescom.groceryapp.UI.Views.SFDRButton;
 
 public class DashboardFragment extends Fragment {
@@ -76,7 +77,7 @@ public class DashboardFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
         context = getActivity();
 
-        RecyclerView rvFeed = rootView.findViewById(R.id.rv__product_feeds);
+        RecyclerView rvFeed = rootView.findViewById(R.id.rv_product_feeds);
 
         dotsLayout = rootView.findViewById(R.id.dots_layout);
         mRecyclerViewPager = rootView.findViewById(R.id.loop_recycler_view_pager);
@@ -87,7 +88,8 @@ public class DashboardFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),1);
         rvFeed.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
         //  call the constructor of ProductFeedsAdapter to send the reference and data to Adapter
-        ProductFeedsAdapter feedsAdapter = new ProductFeedsAdapter(getActivity(), productNames, productImages,Add2Card,feeds_linearLayout);
+        ProductFeedsAdapter feedsAdapter = new ProductFeedsAdapter(getActivity(), productNames, productImages);
+        rvFeed.addItemDecoration(new DividerItemRecyclerDecoration(context,R.drawable.canvas_recycler_divider));
         rvFeed.setAdapter(feedsAdapter); // set the Adapter to RecyclerView
         return rootView;
     }

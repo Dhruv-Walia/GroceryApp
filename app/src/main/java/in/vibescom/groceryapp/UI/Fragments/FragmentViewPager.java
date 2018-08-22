@@ -14,7 +14,7 @@ public class FragmentViewPager extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
 
-        ImageView imageView = (ImageView) v.findViewById(R.id.image);
+        ImageView imageView = (ImageView) v.findViewById(R.id.iv_product_feed);
         imageView.setBackgroundResource(getArguments().getInt("img"));
 
         return v;
